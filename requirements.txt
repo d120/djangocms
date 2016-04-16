@@ -6,7 +6,6 @@ django-cms<3.3
 # a bunch of packages installed without regarding their versions
 cmsplugin-filer
 djangocms-column
-djangocms-googlemap
 djangocms-inherit
 djangocms-link
 djangocms-style
