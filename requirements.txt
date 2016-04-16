@@ -1,21 +1,15 @@
-django-cms<3.3
-django-treebeard>=2.0
-
-https://github.com/divio/djangocms-column/archive/master.zip?1460816818.4741457
-https://github.com/divio/djangocms-googlemap/archive/master.zip?1460816818.4741457
-https://github.com/divio/djangocms-inherit/archive/master.zip?1460816818.4741457
-https://github.com/divio/djangocms-link/archive/master.zip?1460816818.4741457
-https://github.com/divio/djangocms-style/archive/master.zip?1460816818.4741457
-easy_thumbnails
-django-filer>=0.9.12
-cmsplugin-filer>=0.10.2
-djangocms-admin-style>=1.0.6
-djangocms-text-ckeditor>=2.8.1
+# major packages where new versions might introduce incompatibilities
+# test new major versions and update this file accordingly
 Django<1.9
+django-cms<3.3
+
+# a bunch of packages installed without regarding their versions
+cmsplugin-filer
+djangocms-column
+djangocms-googlemap
+djangocms-inherit
+djangocms-link
+djangocms-style
+djangocms-text-ckeditor
+django-reversion
 pytz
-django-reversion>=1.8.7,<1.9
-django-classy-tags>=0.3.4.1
-html5lib
-Pillow>=2.3
-django-sekizai>=0.7
-six

@@ -1,9 +1,12 @@
+# virtualenv
+/venv
+
+# top level static and media folders
+/static
+/media
+
 # compiled python binaries
 *.pyc
 
 # sqlite testing database
 *.db
-
-# top level static and media folders
-/static
-/media
