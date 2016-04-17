@@ -21,7 +21,7 @@ pip install -r requirements.txt
 By default, the `settings.py` file is used which is suitable for a development setup. To have a proper deployment on production, one should use the `settings_production.py` file (which imports the default, overrides certain preferences, and reads secrets from `settings_secrets.py`). This means:
 * pass the `--settings d120.settings_production` option to certain `manage.py` commands
 * or do `export DJANGO_SETTINGS_MODULE=d120.settings_production` to set the environment variable before running multiple `manage.py` commands
-* let the application server (e.g. uwsgi) set the environment variable
+* let the application server (e.g. uwsgi) set the environment variable (see example uwsgi file)
 
 ## Installation
 
@@ -37,6 +37,7 @@ By default, the `settings.py` file is used which is suitable for a development s
 * create the file `d120/settings_secrets.py` (better restrict read access from others) and fill it with the secrets needed in `d120/settings_production.py`
 * follow the necessary steps from the *Deploying Updates* section
 * properly setup a wsgi application server like uwsgi and a webserver like Apache which should serve the static files
+    * the file `uwsgi-djangocms.ini` contains an exemplary uwsgi configuration
 
 ## Deploying Updates
 
