@@ -5,6 +5,9 @@
 /static
 /media
 
+# settings file containing secrets
+d120/settings_secrets.py
+
 # compiled python binaries
 *.pyc
 

@@ -11,6 +11,7 @@ djangocms-link
 djangocms-style
 djangocms-text-ckeditor
 django-reversion
+mysqlclient
 pytz
 
 # replace this with PyPi package once a new version is published
