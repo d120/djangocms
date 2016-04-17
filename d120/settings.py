@@ -62,6 +62,8 @@ INSTALLED_APPS = (
     'djangocms_inherit',
     'djangocms_link',
     'reversion',
+    'django_markdown',
+    'cmsplugin_simple_markdown',
     'd120'
 )
 
@@ -203,7 +205,8 @@ MIGRATION_MODULES = {
     'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
     'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
     'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
-    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django'
+    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
+    'cmsplugin_simple_markdown': 'cmsplugin_simple_markdown.migrations_django',
 }
 
 THUMBNAIL_PROCESSORS = (

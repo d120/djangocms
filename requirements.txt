@@ -12,3 +12,6 @@ djangocms-style
 djangocms-text-ckeditor
 django-reversion
 pytz
+
+# replace this with PyPi package once a new version is published
+git+https://github.com/Alir3z4/cmsplugin-simple-markdown
