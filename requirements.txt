@@ -10,6 +10,7 @@ djangocms-inherit
 djangocms-link
 djangocms-style
 djangocms-text-ckeditor
+django-auth-ldap
 django-reversion
 mysqlclient
 pytz
