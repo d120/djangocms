@@ -5,6 +5,7 @@ django-cms<3.3
 
 # a bunch of packages installed without regarding their versions
 cmsplugin-filer
+cmsplugin-simple-markdown
 djangocms-column
 djangocms-inherit
 djangocms-link
@@ -14,6 +15,3 @@ django-auth-ldap
 django-reversion
 mysqlclient
 pytz
-
-# replace this with PyPi package once a new version is published
-git+https://github.com/Alir3z4/cmsplugin-simple-markdown
