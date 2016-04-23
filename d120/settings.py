@@ -29,7 +29,7 @@ SECRET_KEY = '92i^_tl8hjz&7%olbv52d@n%--v3k&l0l6tx)3p8&r(9d@$mry'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.fachschaft.informatik.tu-darmstadt.de', '.d120.de']
+ALLOWED_HOSTS = []
 
 
 # Application definition

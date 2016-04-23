@@ -14,6 +14,8 @@ SECRET_KEY = secrets.SECRET_KEY
 
 DEBUG = False
 
+ALLOWED_HOSTS = ['.fachschaft.informatik.tu-darmstadt.de', '.d120.de']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
