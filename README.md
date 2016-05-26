@@ -29,7 +29,7 @@ By default, the `settings.py` file is used which is suitable for a development s
 * install dependencies (which you may find out later)
 * create a user, e.g. named *django*
 * clone the repository, e.g. `cd /srv`, `git clone THIS_REPO`
-* create virtualenv, i.e. `cd djangocms`, `virtualenv -p python3 venv` (and maybe update pip)
+* create virtualenv, i.e. `cd djangocms`, `virtualenv -p python3 venv` (and maybe update pip and setuptools)
 * setup the database, e.g.:
     * `mysql -u root`
     * `create database djangocms;`
