@@ -57,6 +57,6 @@ By default, the `settings.py` file is used which is suitable for a development s
 
 To install security or bugfix updates, it should be enough to follow the instructions from the *Deploying Updates* section.
 
-When a new major version of django-cms becomes available, one might want to test this locally before adapting the `requirements.txt` (version is restricted there) and deploying the update on production.
+When a new major version of django-cms becomes available, one might want to test this locally before adapting the `requirements.txt` (version is restricted there) and deploying the update on production. The official django-cms documentation should include further steps in the release notes section.
 
 The same holds true for the Django framework itself. Maybe it is a good idea to stick with LTS releases.
