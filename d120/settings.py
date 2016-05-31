@@ -64,6 +64,7 @@ INSTALLED_APPS = (
     'reversion',
     'django_markdown',
     'cmsplugin_simple_markdown',
+    'aldryn_bootstrap3',
     'd120'
 )
 

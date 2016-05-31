@@ -4,6 +4,7 @@ Django<1.9
 django-cms<3.4
 
 # a bunch of packages installed without regarding their versions
+aldryn-bootstrap3
 cmsplugin-filer
 cmsplugin-simple-markdown
 djangocms-column
