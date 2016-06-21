@@ -17,6 +17,8 @@ pip install -r requirements.txt
 ./manage.py runserver
 ```
 
+Note that some of the required Python packages have other dependencies, e.g. to C libraries which one can install using the distribution's package manager. Which exactly can differ but starting a web search when pip install shows an error typically gives good results.
+
 ## Important Notes on Settings
 
 By default, the `settings.py` file is used which is suitable for a development setup. To have a proper deployment on production, one should use the `settings_production.py` file (which imports the default, overrides certain preferences, and reads secrets from `settings_secrets.py`). This means:
