@@ -45,7 +45,6 @@ By default, the `settings.py` file is used which is suitable for a development s
 ## Deploying Updates
 
 * go to project folder, e.g. `cd /srv/djangocms`
-* maybe stop the application server, e.g. `systemctl stop uwsgi`
 * update the project, i.e. `git pull`
 * activate virtualenv, i.e. `source venv/bin/activate`
 * `pip install --upgrade -r requirements.txt`
@@ -53,7 +52,7 @@ By default, the `settings.py` file is used which is suitable for a development s
 * `./manage.py migrate`
 * `./manage.py collectstatic --noinput`
 * `chown -R django:django .`
-* maybe start the application server, e.g. `systemctl start uwsgi`
+* touch the wsgi file to let uwsgi reload, i.e. `touch d120/wsgi.py`
 
 ## Updating the CMS
 
