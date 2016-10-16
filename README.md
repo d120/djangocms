@@ -37,7 +37,7 @@ By default, the `settings.py` file is used which is suitable for a development s
     * `create database djangocms;`
     * `grant all on djangocms.* to djangocms@localhost identified by DB_PASSWORD;`
     * `quit`
-* create the file `d120/settings_secrets.py` (better restrict read access from others) and fill it with the secrets needed in `d120/settings_production.py`
+* create the file `d120/settings_secrets.py` (copy from `d120/settings_secrets.py.sample`) and fill it with the necessary secrets (it is a good advice to restrict read permissions from others)
 * follow the necessary steps from the *Deploying Updates* section
 * properly setup a wsgi application server like uwsgi and a webserver like Apache which should serve the static files
     * the file `uwsgi-djangocms.ini` contains an exemplary uwsgi configuration
