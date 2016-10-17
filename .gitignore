@@ -11,5 +11,8 @@ d120/settings_secrets.py
 # compiled python binaries
 *.pyc
 
+# compiled localization
+*.mo
+
 # sqlite testing database
 *.db

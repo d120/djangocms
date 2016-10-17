@@ -12,6 +12,7 @@ cd djangocms
 virtualenv -p python3 venv
 source venv/bin/activate
 pip install -r requirements.txt
+cd d120 && ../manage.py compilemessages
 ./manage.py migrate
 ./manage.py createsuperuser
 ./manage.py runserver
@@ -49,6 +50,7 @@ By default, the `settings.py` file is used which is suitable for a development s
 * activate virtualenv, i.e. `source venv/bin/activate`
 * `pip install --upgrade -r requirements.txt`
 * `export DJANGO_SETTINGS_MODULE=d120.settings_production` for the following `manage.py` commands
+* `cd d120 && ../manage.py compilemessages`
 * `./manage.py migrate`
 * `./manage.py collectstatic --noinput`
 * `chown -R django:django .`

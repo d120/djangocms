@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 import os
 
-gettext = lambda s: s
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -147,8 +145,8 @@ USE_TZ = True
 
 LANGUAGES = (
     ## Customize this
-    ('de', gettext('de')),
-    ('en', gettext('en')),
+    ('de', 'de'),
+    ('en', 'en'),
 )
 
 CMS_LANGUAGES = {
@@ -159,14 +157,14 @@ CMS_LANGUAGES = {
             'code': 'de',
             'hide_untranslated': False,
             'redirect_on_fallback': True,
-            'name': gettext('de'),
+            'name': 'de',
         },
         {
             'public': True,
             'code': 'en',
             'hide_untranslated': False,
             'redirect_on_fallback': True,
-            'name': gettext('en'),
+            'name': 'en',
         },
     ],
     'default': {
