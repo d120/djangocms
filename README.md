@@ -12,7 +12,7 @@ cd djangocms
 virtualenv -p python3 venv
 source venv/bin/activate
 pip install -r requirements.txt
-cd d120 && ../manage.py compilemessages
+cd d120 && ../manage.py compilemessages && cd ..
 ./manage.py migrate
 ./manage.py createsuperuser
 ./manage.py runserver
