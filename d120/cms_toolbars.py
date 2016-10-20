@@ -7,6 +7,14 @@ from d120.models import PageColorExtension, MenuEntryMarginExtension, MenuEntryH
 
 
 @toolbar_pool.register
+class CustomBreakExtensionToolbar(ExtensionToolbar):
+    def populate(self):
+        current_page_menu = self._setup_extension_toolbar()
+        if current_page_menu:
+            current_page_menu.add_break("custom_break")
+
+
+@toolbar_pool.register
 class PageColorExtensionToolbar(ExtensionToolbar):
     model = PageColorExtension
     def populate(self):
