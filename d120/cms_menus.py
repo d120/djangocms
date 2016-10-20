@@ -20,3 +20,19 @@ class MenuEntryMarginModifier(Modifier):
         return nodes
 
 menu_pool.register_modifier(MenuEntryMarginModifier)
+
+
+class MenuEntryHeadlineModifier(Modifier):
+    """Make the menu entry headline accessible for the menu.
+    """
+    def modify(self, request, nodes, namespace, root_id, post_cut, breadcrumb):
+        if post_cut:
+            return nodes
+        for node in nodes:
+            if node.attr["is_page"]:
+                title_obj = Page.objects.get(id=node.id).get_title_obj()
+                if hasattr(title_obj, "menuentryheadlineextension"):
+                    node.attr["headline"] = title_obj.menuentryheadlineextension.headline
+        return nodes
+
+menu_pool.register_modifier(MenuEntryHeadlineModifier)

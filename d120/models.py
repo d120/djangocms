@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from cms.extensions import PageExtension
+from cms.extensions import PageExtension, TitleExtension
 from cms.extensions.extension_pool import extension_pool
 
 
@@ -34,3 +34,14 @@ class MenuEntryMarginExtension(PageExtension):
     additional_margin = models.BooleanField(default=False, verbose_name=_("Enable additional margin for menu entry"))
 
 extension_pool.register(MenuEntryMarginExtension)
+
+
+class MenuEntryHeadlineExtension(TitleExtension):
+    """TitleExtension which allows to add headlines to specific menu entries.
+    """
+    class Meta:
+        verbose_name = _("Menu Entry Headline")
+        verbose_name_plural = _("Menu Entry Headlines")
+    headline = models.CharField(blank=True, max_length=64, verbose_name=_("Menu entry headline"))
+
+extension_pool.register(MenuEntryHeadlineExtension)
