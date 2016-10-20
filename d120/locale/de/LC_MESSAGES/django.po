@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-17 13:19+0200\n"
-"PO-Revision-Date: 2016-10-16 19:44+0200\n"
+"POT-Creation-Date: 2016-10-20 15:54+0200\n"
+"PO-Revision-Date: 2016-10-20 15:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -21,6 +21,10 @@ msgstr ""
 #: cms_toolbars.py:17 models.py:12
 msgid "Page Color"
 msgstr "Seitenfarbe"
+
+#: cms_toolbars.py:28 models.py:32
+msgid "Menu Entry Margin"
+msgstr "Menüeintragsabstand"
 
 #: models.py:13
 msgid "Page Colors"
@@ -53,3 +57,11 @@ msgstr "Grün"
 #: models.py:23
 msgid "Color"
 msgstr "Farbe"
+
+#: models.py:33
+msgid "Menu Entry Margins"
+msgstr "Menüeintragsabstände"
+
+#: models.py:34
+msgid "Enable additional margin for menu entry"
+msgstr "Zusätzlichen Abstand für Menüeintrag aktivieren"

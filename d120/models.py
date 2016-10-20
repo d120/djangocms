@@ -23,3 +23,12 @@ class PageColorExtension(PageExtension):
     color = models.CharField(blank=True, choices=PAGE_COLORS, max_length=16, verbose_name=_("Color"))
 
 extension_pool.register(PageColorExtension)
+
+
+class MenuEntryMarginExtension(PageExtension):
+    """PageExtension which allows to enable an additional margin for specific menu entries.
+    """
+    class Meta:
+        verbose_name = _("Menu Entry Margin")
+        verbose_name_plural = _("Menu Entry Margins")
+    additional_margin = models.BooleanField(default=False, verbose_name=_("Enable additional margin for menu entry"))
