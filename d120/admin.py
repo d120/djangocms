@@ -5,13 +5,11 @@ from cms.extensions import PageExtensionAdmin
 from d120.models import PageColorExtension, MenuEntryMarginExtension
 
 
+@admin.register(PageColorExtension)
 class PageColorExtensionAdmin(PageExtensionAdmin):
     pass
 
-admin.site.register(PageColorExtension, PageColorExtensionAdmin)
 
-
+@admin.register(MenuEntryMarginExtension)
 class MenuEntryMarginExtensionAdmin(PageExtensionAdmin):
     pass
-
-admin.site.register(MenuEntryMarginExtension, MenuEntryMarginExtensionAdmin)
