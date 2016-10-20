@@ -32,3 +32,5 @@ class MenuEntryMarginExtension(PageExtension):
         verbose_name = _("Menu Entry Margin")
         verbose_name_plural = _("Menu Entry Margins")
     additional_margin = models.BooleanField(default=False, verbose_name=_("Enable additional margin for menu entry"))
+
+extension_pool.register(MenuEntryMarginExtension)
