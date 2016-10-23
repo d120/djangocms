@@ -4,9 +4,9 @@ Django<1.9
 django-cms<3.4
 
 # a bunch of packages installed without regarding their versions
+# when (temporary) pinning of versions is necessary, comment on the reasoning
 aldryn-bootstrap3
 cmsplugin-filer
-cmsplugin-simple-markdown
 djangocms-column
 djangocms-inherit
 djangocms-link
@@ -17,3 +17,5 @@ django-reversion<2.0        # quickfix for compatibility; will be removed with d
 django-select2
 mysqlclient
 pytz
+
+git+https://github.com/Alir3z4/cmsplugin-simple-markdown    # install directly from source until PyPi release is up to date
