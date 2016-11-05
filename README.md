@@ -30,7 +30,7 @@ By default, the `settings.py` file is used which is suitable for a development s
 ## Installation
 
 * install dependencies (which you may find out later)
-* create a user, e.g. named *django*
+* create a user, e.g. named *djangocms*
 * clone the repository, e.g. `cd /srv`, `git clone THIS_REPO`
 * create virtualenv, i.e. `cd djangocms`, `virtualenv -p python3 venv` (and maybe update pip and setuptools)
 * setup the database, e.g.:
@@ -53,7 +53,7 @@ By default, the `settings.py` file is used which is suitable for a development s
 * `cd d120 && ../manage.py compilemessages`
 * `./manage.py migrate`
 * `./manage.py collectstatic --noinput`
-* `chown -R django:django .`
+* `chown -R djangocms:djangocms .`
 * touch the wsgi file to let uwsgi reload, i.e. `touch d120/wsgi.py`
 
 ## Updating the CMS
