@@ -39,27 +39,26 @@ By default, the `settings.py` file is used which is suitable for a development s
     * `grant all on djangocms.* to djangocms@localhost identified by DB_PASSWORD;`
     * `quit`
 * create the file `d120/settings_secrets.py` (copy from `d120/settings_secrets.py.sample`) and fill it with the necessary secrets (it is a good advice to restrict read permissions from others)
-* follow the necessary steps from the *Deploying Updates* section
+* make all the files belong to the proper user, e.g. `chown -R djangocms:djangocms .`
+* run the update script once: `sudo -u djangocms script/update --prod`
 * properly setup a wsgi application server like uwsgi and a webserver like Apache which should serve the static files
     * the file `uwsgi-djangocms.ini` contains an exemplary uwsgi configuration
 
-## Deploying Updates
+## Updating from this Repository
 
-* go to project folder, e.g. `cd /srv/djangocms`
-* update the project, i.e. `git pull`
-* activate virtualenv, i.e. `source venv/bin/activate`
-* `pip install --upgrade -r requirements.txt`
-* `export DJANGO_SETTINGS_MODULE=d120.settings_production` for the following `manage.py` commands
-* `cd d120 && ../manage.py compilemessages`
-* `./manage.py migrate`
-* `./manage.py collectstatic --noinput`
-* `chown -R djangocms:djangocms .`
-* touch the wsgi file to let uwsgi reload, i.e. `touch d120/wsgi.py`
+All necessary steps to update from this repository can be found in `script/update`. Just go into the project folder and run the script.
 
-## Updating the CMS
+* for a local installation, this would be `script/update`
+* for a production installation owned by user *djangocms*, this would be `sudo -u djangocms script/update --prod`
 
-To install security or bugfix updates, it should be enough to follow the instructions from the *Deploying Updates* section.
+Since our `requirements.txt` does not pin versions of additional packages, it might happen that a third party package receives an update which breaks compatibility. In this case, have a look on the output of the script, roll back the affected package and/or investigate what is going on.
 
-When a new major version of django-cms becomes available, one might want to test this locally before adapting the `requirements.txt` (version is restricted there) and deploying the update on production. The official django-cms documentation should include further steps in the release notes section.
+## Updating django CMS, Django, and additional packages
 
-The same holds true for the Django framework itself. Maybe it is a good idea to stick with LTS releases.
+To install security or bugfix updates, it should be enough to follow the instructions from above, due to the loose version pinning in `requirements.txt`. This is done to avoid keeping track of releases of all the installed packages. Pinning them would lead to a poorly updated installation.
+
+However, major updates from additional packages can break compatibility, see notes above for this. If it seems necessary to pin the version of an additional package, make this a temporary solution and add a comment in `requirements.txt` explaining the reason.
+
+The version of the django-cms package itself is restricted to a major release, so only compatible updates are installed without touching the `requirements.txt`. When a new major version becomes available, one might want to test this locally before changing the restriction and deploying the update on production. The official django CMS documentation should include important information in the release notes section!
+
+The same holds true for the Django framework. Maybe it is a good idea to stick with LTS releases.

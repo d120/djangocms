@@ -1,0 +1,23 @@
+#!/bin/bash
+# perform necessary actions to update the djangocms website
+
+set -e
+
+# activate virtualenv if necessary
+if [ -z ${VIRTUAL_ENV+x} ]; then
+    source venv/bin/activate
+fi
+
+# set environment variable when we want to update in production
+if [ "$1" = "--prod" ]; then
+    export DJANGO_SETTINGS_MODULE=d120.settings_production
+fi
+
+git pull
+pip install --upgrade -r requirements.txt
+cd d120 && ../manage.py compilemessages && cd ..
+if [ "$1" = "--prod" ]; then
+    ./manage.py collectstatic --noinput
+fi
+./manage.py migrate
+touch d120/wsgi.py
