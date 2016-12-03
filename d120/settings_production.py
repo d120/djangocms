@@ -35,7 +35,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-AUTH_LDAP_SERVER_URI = "ldap://10.162.32.201"
+AUTH_LDAP_SERVER_URI = "ldap://10.162.32.200"
 AUTH_LDAP_USER_DN_TEMPLATE = "uid=%(user)s,ou=People,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de"
 AUTH_LDAP_GROUP_SEARCH = LDAPSearch("ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de", ldap.SCOPE_SUBTREE, "(objectClass=groupOfNames)")
 AUTH_LDAP_GROUP_TYPE = GroupOfNamesType()
