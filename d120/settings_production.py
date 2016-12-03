@@ -36,8 +36,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 AUTH_LDAP_SERVER_URI = "ldap://10.162.32.200"
-AUTH_LDAP_USER_DN_TEMPLATE = "uid=%(user)s,ou=People,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de"
-AUTH_LDAP_GROUP_SEARCH = LDAPSearch("ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de", ldap.SCOPE_SUBTREE, "(objectClass=groupOfNames)")
+AUTH_LDAP_BIND_DN = 'cn=djangocms,ou=Services,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de'
+AUTH_LDAP_BIND_PASSWORD = secrets.LDAP_PASSWORD
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=People,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de", ldap.SCOPE_ONELEVEL, "(uid=%(user)s)")
+AUTH_LDAP_GROUP_SEARCH = LDAPSearch("ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de", ldap.SCOPE_ONELEVEL, "(objectClass=groupOfNames)")
 AUTH_LDAP_GROUP_TYPE = GroupOfNamesType()
 AUTH_LDAP_MIRROR_GROUPS = True
 AUTH_LDAP_REQUIRE_GROUP = "cn=fachschaft,ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de"
