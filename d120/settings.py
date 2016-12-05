@@ -63,6 +63,7 @@ INSTALLED_APPS = (
     'django_markdown',
     'cmsplugin_simple_markdown',
     'aldryn_bootstrap3',
+    'rssplugin',
     'd120'
 )
 
