@@ -53,3 +53,21 @@ AUTH_LDAP_USER_FLAGS_BY_GROUP = {
     "is_staff": "cn=fachschaft,ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de",
     "is_superuser": "cn=fss,ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de",
 }
+
+ADMINS = [
+    ('FSS', 'fss@fachschaft.informatik.tu-darmstadt.de'),
+    ('UA-Webseite', 'webseite@fachschaft.informatik.tu-darmstadt.de'),
+]
+MANAGERS = [
+    ('UA-Webseite', 'webseite@fachschaft.informatik.tu-darmstadt.de'),
+]
+
+SERVER_EMAIL = "djangocms@fachschaft.informatik.tu-darmstadt.de"
+DEFAULT_FROM_EMAIL = SERVER_EMAIL
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.d120.de'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'djangocms'
+EMAIL_HOST_PASSWORD = secrets.MAIL_PASSWORD
