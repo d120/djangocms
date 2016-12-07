@@ -1,4 +1,4 @@
-{% load rss_tags %}
+{% load rss_tags unescape_unicode %}
 <div class="rss-plugin">
     <div class="feed-title">
         {{ instance.title }}
@@ -13,7 +13,7 @@
             {{ e.published_parsed|parsed_to_date }}
         </div>
         <div class="feed-entry-summary">
-            {{ e.summary }}
+            {{ e.summary|unescape_unicode }}
         </div>
     </div>
     {% endif %}
