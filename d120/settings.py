@@ -197,6 +197,10 @@ CMS_TEMPLATES = (
     ('feature.html', 'Page with Feature')
 )
 
+CMS_RSS_PLUGIN_TEMPLATES = (
+    ('rss_feed.html', 'D120-Default-RSS'),
+)
+
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}

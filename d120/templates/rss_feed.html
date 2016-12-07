@@ -1,0 +1,21 @@
+{% load rss_tags %}
+<div class="rss-plugin">
+    <div class="feed-title">
+        {{ instance.title }}
+    </div>
+    {% for e in feed.entries %}
+    {% if forloop.counter <= instance.count %}
+    <div class="feed-entry">
+        <div class="feed-entry-title">
+            <a {% if instance.open_in_new_window %}target="_blank" rel="noopener noreferrer"{% endif %} href="{{ e.link }}">{{ e.title }}</a>
+        </div>
+        <div class="feed-entry-date">
+            {{ e.published_parsed|parsed_to_date }}
+        </div>
+        <div class="feed-entry-summary">
+            {{ e.summary }}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
