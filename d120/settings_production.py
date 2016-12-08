@@ -10,11 +10,20 @@ from django_auth_ldap.config import LDAPSearch, GroupOfNamesType
 from d120.settings import *
 import d120.settings_secrets as secrets
 
-SECRET_KEY = secrets.SECRET_KEY
+
+### SECURITY ###
 
 DEBUG = False
 
 ALLOWED_HOSTS = ['.fachschaft.informatik.tu-darmstadt.de', '.d120.de']
+
+SECRET_KEY = secrets.SECRET_KEY
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+
+### DATABASE ###
 
 DATABASES = {
     'default': {
@@ -26,9 +35,8 @@ DATABASES = {
     }
 }
 
-SESSION_COOKIE_SECURE = True
 
-CSRF_COOKIE_SECURE = True
+### AUTHENTICATION & LDAP ###
 
 AUTHENTICATION_BACKENDS = (
     'django_auth_ldap.backend.LDAPBackend',
@@ -43,21 +51,27 @@ AUTH_LDAP_GROUP_SEARCH = LDAPSearch("ou=Group,dc=fachschaft,dc=informatik,dc=tu-
 AUTH_LDAP_GROUP_TYPE = GroupOfNamesType()
 AUTH_LDAP_MIRROR_GROUPS = True
 AUTH_LDAP_REQUIRE_GROUP = "cn=fachschaft,ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de"
+
 AUTH_LDAP_USER_ATTR_MAP = {
     "first_name": "givenName",
     "last_name": "sn",
     "email": "mail",
 }
+
 AUTH_LDAP_USER_FLAGS_BY_GROUP = {
     "is_active": "cn=fachschaft,ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de",
     "is_staff": "cn=fachschaft,ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de",
     "is_superuser": "cn=fss,ou=Group,dc=fachschaft,dc=informatik,dc=tu-darmstadt,dc=de",
 }
 
+
+### MAIL ###
+
 ADMINS = [
     ('FSS', 'fss@fachschaft.informatik.tu-darmstadt.de'),
     ('UA-Webseite', 'webseite@fachschaft.informatik.tu-darmstadt.de'),
 ]
+
 MANAGERS = [
     ('UA-Webseite', 'webseite@fachschaft.informatik.tu-darmstadt.de'),
 ]
