@@ -8,6 +8,8 @@ from d120.models import PageColorExtension, MenuEntryMarginExtension, MenuEntryH
 
 @toolbar_pool.register
 class CustomBreakExtensionToolbar(ExtensionToolbar):
+    """Insert a break line in the toolbar menu to visually separate our custom entries.
+    """
     def populate(self):
         current_page_menu = self._setup_extension_toolbar()
         if current_page_menu:
@@ -16,6 +18,8 @@ class CustomBreakExtensionToolbar(ExtensionToolbar):
 
 @toolbar_pool.register
 class PageColorExtensionToolbar(ExtensionToolbar):
+    """Add an entry for the PageColorExtension to the toolbar.
+    """
     model = PageColorExtension
     def populate(self):
         current_page_menu = self._setup_extension_toolbar()
@@ -27,6 +31,8 @@ class PageColorExtensionToolbar(ExtensionToolbar):
 
 @toolbar_pool.register
 class MenuEntryMarginExtensionToolbar(ExtensionToolbar):
+    """Add an entry for the MenuEntryMarginExtension to the toolbar.
+    """
     model = MenuEntryMarginExtension
     def populate(self):
         current_page_menu = self._setup_extension_toolbar()
@@ -38,6 +44,8 @@ class MenuEntryMarginExtensionToolbar(ExtensionToolbar):
 
 @toolbar_pool.register
 class MenuEntryHeadlineExtensionToolbar(ExtensionToolbar):
+    """Add an entry for the MenuEntryHeadlineExtension to the toolbar.
+    """
     model = MenuEntryHeadlineExtension
     def populate(self):
         current_page_menu = self._setup_extension_toolbar()
