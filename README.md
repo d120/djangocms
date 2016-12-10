@@ -11,6 +11,7 @@ git clone THIS_REPO
 cd djangocms
 virtualenv -p python3 venv
 source venv/bin/activate
+bower install
 pip install -r requirements.txt
 cd d120 && ../manage.py compilemessages && cd ..
 ./manage.py migrate
@@ -18,7 +19,7 @@ cd d120 && ../manage.py compilemessages && cd ..
 ./manage.py runserver
 ```
 
-Note that some of the required Python packages have other dependencies, e.g. to C libraries which one can install using the distribution's package manager. Which exactly can differ but starting a web search when pip install shows an error typically gives good results.
+Note that some of the required Python packages have other dependencies, e.g. to C libraries which one can install using the distribution's package manager. Which exactly can differ but starting a web search when pip install shows an error typically gives good results. Additionally, bower must be installed (maybe via npm) for frontend dependency management.
 
 ## Important Notes on Settings
 
