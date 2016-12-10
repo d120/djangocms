@@ -63,3 +63,5 @@ However, major updates from additional packages can break compatibility, see not
 The version of the django-cms package itself is restricted to a major release, so only compatible updates are installed without touching the `requirements.txt`. When a new major version becomes available, one might want to test this locally before changing the restriction and deploying the update on production. The official django CMS documentation should include important information in the release notes section!
 
 The same holds true for the Django framework. Maybe it is a good idea to stick with LTS releases.
+
+Additionally, from time to time one should look for updated versions of the frontend dependencies listed in `bower.json`.
