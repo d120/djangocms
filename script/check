@@ -9,5 +9,5 @@ fi
 # enable deprecation warnings which are silenced by default
 export PYTHONWARNINGS=all
 
-./manage.py check
+# run cms check which seems to include standard manage.py check
 ./manage.py cms check
