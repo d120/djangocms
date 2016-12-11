@@ -64,4 +64,6 @@ The version of the django-cms package itself is restricted to a major release, s
 
 The same holds true for the Django framework. Maybe it is a good idea to stick with LTS releases.
 
+Before and after changing major versions, use the `script/check` wrapper script to check the project for potential problems (such as deprecations). Note that it may also output warnings in third party packages.
+
 Additionally, from time to time one should look for updated versions of the frontend dependencies listed in `bower.json`.
