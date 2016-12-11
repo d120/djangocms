@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     'cmsplugin_filer_video',
     'djangocms_inherit',
     'djangocms_link',
+    'djangocms_redirect',
     'reversion',
     'django_markdown',
     'cmsplugin_simple_markdown',
@@ -64,6 +65,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'djangocms_redirect.middleware.RedirectMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
     'cms.middleware.utils.ApphookReloadMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

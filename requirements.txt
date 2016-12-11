@@ -10,6 +10,7 @@ cmsplugin-filer
 djangocms-column
 djangocms-inherit
 djangocms-link
+djangocms-redirect
 djangocms-style
 djangocms-text-ckeditor
 django-auth-ldap
