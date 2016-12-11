@@ -6,8 +6,9 @@ if [ -z ${VIRTUAL_ENV+x} ]; then
     source venv/bin/activate
 fi
 
-# enable deprecation warnings which are silenced by default
-export PYTHONWARNINGS=all
+# enable really all warnings, some of them are silenced by default
+# this is commented out for now since this shows a massive amount of third party problems that are not urgent
+#export PYTHONWARNINGS=all
 
 # run cms check which seems to include standard manage.py check
 ./manage.py cms check
