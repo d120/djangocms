@@ -1,6 +1,6 @@
 # major packages where new versions might introduce incompatibilities
 # test new major versions and update this file accordingly
-Django<1.9
+Django<1.10
 django-cms<3.4
 
 # a bunch of packages installed without regarding their versions
