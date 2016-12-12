@@ -216,6 +216,4 @@ CMS_PLACEHOLDER_CONF = {}
 
 ### RSSPLUGIN ###
 
-CMS_RSS_PLUGIN_TEMPLATES = (
-    ('rss_feed.html', 'D120-Default-RSS'),
-)
+CMS_RSS_PLUGIN_TEMPLATE = 'rss_feed.html'
