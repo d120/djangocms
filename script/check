@@ -7,8 +7,9 @@ if [ -z ${VIRTUAL_ENV+x} ]; then
 fi
 
 # enable really all warnings, some of them are silenced by default
-# this is commented out for now since this shows a massive amount of third party problems that are not urgent
-#export PYTHONWARNINGS=all
+if [ "$1" = "--all" ]; then
+    export PYTHONWARNINGS=all
+fi
 
 # run cms check which seems to include standard manage.py check
 ./manage.py cms check
