@@ -7,8 +7,14 @@ if [ -z ${VIRTUAL_ENV+x} ]; then
 fi
 
 # enable really all warnings, some of them are silenced by default
-if [ "$1" = "--all" ]; then
+if [[ "$@" == *"--all"* ]]; then
     export PYTHONWARNINGS=all
+fi
+
+# in case of checking production setup
+if [[ "$@" == *"--prod"* ]]; then
+    export DJANGO_SETTINGS_MODULE=d120.settings_production
+    ./manage.py check --deploy
 fi
 
 # run cms check which seems to include standard manage.py check
