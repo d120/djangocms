@@ -36,6 +36,16 @@ DATABASES = {
 }
 
 
+### CACHE ###
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'd120-djangocms',
+    }
+}
+
+
 ### AUTHENTICATION & LDAP ###
 
 AUTHENTICATION_BACKENDS = (

@@ -1,8 +1,20 @@
-{% extends "base.html" %}
-{% load cms_tags %}
+{% extends "base.html" %} {% load cms_tags menu_tags %}
 
-{% block title %}{% page_attribute "page_title" %}{% endblock title %}
-
-{% block content %}
-    {% placeholder "content" %}
-{% endblock content %}
+{% block page %}
+{% include "header.html" %}
+<div class="container">
+    <div class="row" id="main">
+        <div class="col-lg-3 col-md-4 col-sm-5">
+            {% include "sidebar.html" %}
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12 col-sm-7 pull-right" id="content">
+            <div class="row">
+            {% show_breadcrumb 0 "breadcrumb.html" %}
+            {% language_chooser 'language_chooser.html' %}
+            </div>
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock page %}

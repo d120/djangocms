@@ -1,0 +1,8 @@
+{% extends "page.html" %} {% load cms_tags %}
+
+{% block content %}
+{% placeholder "welcome" %}
+<div class="announcement">{% placeholder "announcement" %}</div>
+{% placeholder "news" %}
+{% placeholder "rightbar" %}
+{% endblock content %}

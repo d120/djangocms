@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SECRET_KEY = '92i^_tl8hjz&7%olbv52d@n%--v3k&l0l6tx)3p8&r(9d@$mry'
 
@@ -195,6 +195,15 @@ STATICFILES_DIRS = (
 )
 
 
+### CACHE ###
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
+
 ### MAIL ###
 
 EMAIL_SUBJECT_PREFIX = "[DJANGOCMS] "
@@ -205,8 +214,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ### COMMON CMS SETTINGS ###
 
 CMS_TEMPLATES = (
-    ('page.html', 'Page'),
-    ('feature.html', 'Page with Feature')
+    ('frontpage.html', 'Front Page'),
+    ('standardpage.html', 'Standard Page'),
 )
 
 CMS_PERMISSION = True
