@@ -160,17 +160,11 @@ LANGUAGES = (
 CMS_LANGUAGES = {
     1: [
         {
-            'public': True,
             'code': 'de',
-            'hide_untranslated': False,
-            'redirect_on_fallback': True,
             'name': 'de',
         },
         {
-            'public': True,
             'code': 'en',
-            'hide_untranslated': False,
-            'redirect_on_fallback': True,
             'name': 'en',
         },
     ],
