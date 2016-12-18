@@ -12,12 +12,12 @@ class PageColorExtension(PageExtension):
         verbose_name = _("Page Color")
         verbose_name_plural = _("Page Colors")
     PAGE_COLORS = (
-        ("#d35400", _("Orange")),
-        ("#c0392b", _("Red")),
-        ("#8e44ad", _("Purple")),
-        ("#2980b9", _("Blue")),
-        ("#16a085", _("Turquoise")),
-        ("#27ae60", _("Green")),
+        ("#CC4C03", _("Orange")),
+        ("#B90F22", _("Red")),
+        ("#804597", _("Purple")),
+        ("#00689D", _("Blue")),
+        ("#009D81", _("Turquoise")),
+        ("#6A8B22", _("Green")),
     )
     DEFAULT_COLOR = PAGE_COLORS[0][0]
     color = models.CharField(blank=True, choices=PAGE_COLORS, max_length=16, verbose_name=_("Color"))
