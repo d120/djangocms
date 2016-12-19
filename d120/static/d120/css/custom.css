@@ -180,10 +180,14 @@ li.headline:hover {
     padding-left: 20px;
 }
 .announcement {
-    border: 3px solid #b90f22;
-    padding: 10px;
-    padding-top: 25px;
+    border-left: 3px solid #b90f22;
+    background-color: #f9d6d6;
+    margin-top: 25px;
+    padding: 20px 20px 10px 20px;
 }
 .announcement:empty {
     display: none;
+}
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
 }
