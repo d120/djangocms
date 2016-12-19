@@ -7,11 +7,9 @@
         <div class="col-lg-3 col-md-4 col-sm-5">
             {% include "sidebar.html" %}
         </div>
-        <div class="col-lg-8 col-md-8 col-xs-12 col-sm-7 pull-right" id="content">
-            <div class="row">
-            {% show_breadcrumb 0 "breadcrumb.html" %}
+        <div class="col-lg-9 col-md-8 col-xs-12 col-sm-7 pull-right" id="content">
             {% language_chooser 'language_chooser.html' %}
-            </div>
+            {% show_breadcrumb 0 "breadcrumb.html" %}
             {% block content %}{% endblock content %}
         </div>
     </div>

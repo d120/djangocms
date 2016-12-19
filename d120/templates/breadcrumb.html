@@ -1,6 +1,6 @@
 {% load cms_tags %}
 {% if ancestors|length > 1 %}
-    <ol class="breadcrumb col-md-10">
+    <ol class="breadcrumb">
     {% for ancestor in ancestors %}
         {% if not forloop.last %}
             <li><a href="{{ ancestor.get_absolute_url }}">{{ancestor.attr.page_title}}</a></li>

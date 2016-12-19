@@ -1,7 +1,7 @@
 {% load i18n menu_tags %}
 
 {% if request.current_page.get_languages|length > 1 %}
-    <div class="language-chooser breadcrumb col-md-2 pull-right text-right">
+    <div class="language-chooser breadcrumb pull-right text-right">
         {% for language in languages %}
             {% if current_language == language.0 %}
                 <span class="active">{{ language.1 }}</span>

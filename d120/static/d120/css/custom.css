@@ -53,6 +53,7 @@ footer .row {
 }
 #sidebar {
     font-size: 18px;
+    margin-top: 50px;
 }
 #content {
     text-align: justify;
@@ -68,6 +69,7 @@ footer .row {
 }
 .breadcrumb {
     background-color: inherit;
+    padding: 0;
 }
 .sidebar-active,
 .sidebar-active:hover,
@@ -169,6 +171,7 @@ li.headline:hover {
 .navbar {
     border-radius: 0;
     border: 0;
+    margin-bottom: 0;
 }
 .additionalMargin {
     margin-bottom: 25px;
