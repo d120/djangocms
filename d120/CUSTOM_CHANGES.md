@@ -8,9 +8,9 @@ When creating custom stuff for the CMS, it might happen that one introduces stri
 
 ## PageTitleModifier
 
-The menu system that is usable in templates does not have access to all attributes of a page by default. In order to be able to retrieve the `page_title` attribute (as opposed to the possibly different menu title) within the menu system, a navigation modifier is created.
+The menu system that is usable in templates does not have access to all attributes of a page by default. In order to be able to retrieve the `page_title` attribute (as opposed to the possibly different menu title) within the menu system, a custom navigation modifier is used.
 
-- `PageTitleModifier` in `cms_menus.py` makes the `page_title` attribute accessible for the menu system.
+- `D120NavigationModifier` in `cms_menus.py` makes the `page_title` attribute accessible for the menu system.
 
 
 ## PageColorExtension
@@ -30,7 +30,7 @@ To allow additional spacing between menu entries, a CMS PageExtension is created
 - `MenuEntryMarginExtension` in `models.py` has an attribute that stores if a menu entry should have an additional margin.
 - `MenuEntryMarginExtensionAdmin` in `admin.py` registers this extension to the admin menu (which is necessary for the extension to work out).
 - `MenuEntryMarginExtensionToolbar` in `cms_toolbars.py` adds an entry to the toolbar in order to modify this attribute.
-- `MenuEntryMarginModifier` in `cms_menus.py` makes this custom attribute accessible for the somewhat special menu system.
+- `D120NavigationModifier` in `cms_menus.py` makes this custom attribute accessible for the somewhat special menu system.
 
 
 ## MenuEntryHeadlineExtension
@@ -40,7 +40,7 @@ Maybe one wants to show additional text above certain menu entries. To be able t
 - `MenuEntryHeadlineExtension` in `models.py` allows to store a localizable headline for a page's menu entry.
 - `MenuEntryHeadlineExtensionAdmin` in `admin.py` registers this extension to the admin menu (which is necessary for the extension to work out).
 - `MenuEntryHeadlineExtensionToolbar` in `cms_toolbars.py` adds an entry to the toolbar in order to modify this attribute.
-- `MenuEntryHeadlineModifier` in `cms_menus.py` makes this custom attribute accessible for the somewhat special menu system.
+- `D120NavigationModifier` in `cms_menus.py` makes this custom attribute accessible for the somewhat special menu system.
 
 
 ## Templatefilter `unescape_unicode`
