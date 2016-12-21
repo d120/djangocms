@@ -194,3 +194,11 @@ li.headline:hover {
 h1,h2,h3,h4,h5 {
     text-align:left;
 }
+
+.table h1,h2,h3,h4,h5 {
+    margin-top:5px;
+}
+
+.table .table {
+    margin-bottom:0;
+}
