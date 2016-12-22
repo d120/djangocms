@@ -8,14 +8,19 @@ class D120NavigationModifier(Modifier):
     """Make several useful attributes accessible for the menu system.
     """
     def modify(self, request, nodes, namespace, root_id, post_cut, breadcrumb):
-        page_nodes = [n for n in nodes if n.attr["is_page"]]
-        pages = Page.objects.filter(id__in=[n.id for n in page_nodes])
 
-        for node in page_nodes:
-            if breadcrumb:
+        if breadcrumb:
+            selected = next(n for n in nodes if n.selected and n.attr["is_page"])
+            page_nodes = [selected] + selected.get_ancestors()
+            pages = Page.objects.filter(id__in=[n.id for n in page_nodes])
+            for node in page_nodes:
                 # make the page_title attribute accessible for the breadcrumb
                 node.attr["page_title"] = pages.get(id=node.id).get_page_title()
-            elif post_cut:
+
+        elif post_cut:
+            page_nodes = [n for n in nodes if n.attr["is_page"]]
+            pages = Page.objects.filter(id__in=[n.id for n in page_nodes])
+            for node in page_nodes:
                 page = pages.get(id=node.id)
 
                 # make the custom MenuEntryMarginExtension accessible for the menu
