@@ -1,7 +1,7 @@
 from menus.base import Modifier
 from menus.menu_pool import menu_pool
 
-from cms.models import Page
+from cms.models import Title
 
 
 class D120NavigationModifier(Modifier):
@@ -12,25 +12,25 @@ class D120NavigationModifier(Modifier):
         if breadcrumb:
             selected = next(n for n in nodes if n.selected and n.attr["is_page"])
             page_nodes = [selected] + selected.get_ancestors()
-            pages = {p.id: p for p in Page.objects.filter(id__in=[n.id for n in page_nodes])}
+            titles = {t.page_id: t for t in Title.objects.filter(page_id__in=[n.id for n in page_nodes])}
             for node in page_nodes:
                 # make the page_title attribute accessible for the breadcrumb
-                node.attr["page_title"] = pages[node.id].get_page_title()
+                node.attr["page_title"] = titles[node.id].page_title if titles[node.id].page_title else titles[node.id].title
 
         elif post_cut:
             page_nodes = [n for n in nodes if n.attr["is_page"]]
-            pages = {p.id: p for p in Page.objects.filter(id__in=[n.id for n in page_nodes]).select_related('menuentrymarginextension')}
+            titles = {t.page_id: t for t in Title.objects.filter(page_id__in=[n.id for n in page_nodes]).select_related('page__menuentrymarginextension', 'menuentryheadlineextension')}
             for node in page_nodes:
-                page = pages[node.id]
+                title = titles[node.id]
+                page = title.page
 
                 # make the custom MenuEntryMarginExtension accessible for the menu
                 if hasattr(page, "menuentrymarginextension"):
                     node.attr["additional_margin"] = page.menuentrymarginextension.additional_margin
 
                 # make the custom MenuEntryHeadlineExtension accessible for the menu
-                title_obj = page.get_title_obj()
-                if hasattr(title_obj, "menuentryheadlineextension"):
-                    node.attr["headline"] = title_obj.menuentryheadlineextension.headline
+                if hasattr(title, "menuentryheadlineextension"):
+                    node.attr["headline"] = title.menuentryheadlineextension.headline
 
         return nodes
 
