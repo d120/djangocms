@@ -12,16 +12,16 @@ class D120NavigationModifier(Modifier):
         if breadcrumb:
             selected = next(n for n in nodes if n.selected and n.attr["is_page"])
             page_nodes = [selected] + selected.get_ancestors()
-            pages = Page.objects.filter(id__in=[n.id for n in page_nodes])
+            pages = {p.id: p for p in Page.objects.filter(id__in=[n.id for n in page_nodes])}
             for node in page_nodes:
                 # make the page_title attribute accessible for the breadcrumb
-                node.attr["page_title"] = pages.get(id=node.id).get_page_title()
+                node.attr["page_title"] = pages[node.id].get_page_title()
 
         elif post_cut:
             page_nodes = [n for n in nodes if n.attr["is_page"]]
-            pages = Page.objects.filter(id__in=[n.id for n in page_nodes])
+            pages = {p.id: p for p in Page.objects.filter(id__in=[n.id for n in page_nodes]).select_related('menuentrymarginextension')}
             for node in page_nodes:
-                page = pages.get(id=node.id)
+                page = pages[node.id]
 
                 # make the custom MenuEntryMarginExtension accessible for the menu
                 if hasattr(page, "menuentrymarginextension"):
