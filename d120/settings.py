@@ -65,6 +65,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
     'djangocms_redirect.middleware.RedirectMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
     'cms.middleware.utils.ApphookReloadMiddleware',
@@ -81,6 +82,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 TEMPLATES = [
