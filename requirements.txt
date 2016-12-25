@@ -14,6 +14,7 @@ djangocms-redirect
 djangocms-style
 djangocms-text-ckeditor
 django-auth-ldap
+django-redis
 django-reversion<2.0        # quickfix for compatibility; will be removed with django-cms 3.4 and when third-party revision module is available
 django-select2
 mysqlclient
