@@ -1,7 +1,11 @@
 {% load rss_tags unescape_unicode %}
 <div class="rss-plugin">
     <div class="feed-title h2">
+        {% if instance.title %}
         {{ instance.title }}
+        {% else %}
+        {{ feed.feed.title }}
+        {% endif %}
     </div>
     {% for e in feed.entries %}
     {% if forloop.counter <= instance.count %}
