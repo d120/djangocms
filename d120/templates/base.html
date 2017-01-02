@@ -4,13 +4,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="icon" type="image/png" href="{% static 'd120/img/favicon.ico' %}" />
         <meta name="description" content="{% page_attribute 'meta_description' %}" />
         <title>
         {% block title %}
-            {% page_attribute "page_title" %}
+            {% page_attribute "page_title" %} - Fachschaft Informatik
         {% endblock title %}
         </title>
+        <link rel="canonical" href="https://www.fachschaft.informatik.tu-darmstadt.de{{ request.path }}" />
+        <link rel="icon" type="image/png" href="{% static 'd120/img/favicon.ico' %}" />
         {% addtoblock "css" %}
         <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" />
