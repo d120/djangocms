@@ -11,10 +11,7 @@ git clone THIS_REPO
 cd djangocms
 virtualenv -p python3 venv
 source venv/bin/activate
-bower install
-pip install -r requirements.txt
-cd d120 && ../manage.py compilemessages && cd ..
-./manage.py migrate
+script/update
 ./manage.py createsuperuser
 ./manage.py runserver
 ```
