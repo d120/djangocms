@@ -25,7 +25,7 @@ By default, the `settings.py` file is used which is suitable for a development s
 * or do `export DJANGO_SETTINGS_MODULE=d120.settings_production` to set the environment variable before running multiple `manage.py` commands
 * let the application server (e.g. uwsgi) set the environment variable (see example uwsgi file)
 
-## Installation
+## Installation on Production Server
 
 * install dependencies (which you may find out later)
 * create a user, e.g. named *djangocms*
