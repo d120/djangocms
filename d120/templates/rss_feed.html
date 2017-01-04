@@ -11,13 +11,13 @@
     {% if forloop.counter <= instance.count %}
     <div class="feed-entry">
         <div class="row">
-        <div class="feed-entry-title h3 col-sm-8">
-            <a {% if instance.open_in_new_window %}target="_blank" rel="noopener noreferrer"{% endif %} href="{{ e.link }}">{{ e.title }}</a>
+            <div class="feed-entry-title h3 col-sm-8">
+                <a {% if instance.open_in_new_window %}target="_blank" rel="noopener noreferrer"{% endif %} href="{{ e.link }}">{{ e.title }}</a>
+            </div>
+            <div class="feed-entry-date col-sm-4">
+                {{ e.published_parsed|parsed_to_date }}
+            </div>
         </div>
-        <div class="feed-entry-date col-sm-4">
-            {{ e.published_parsed|parsed_to_date }}
-        </div>
-    </div>
         <div class="feed-entry-summary">
             {{ e.summary|unescape_unicode }}
         </div>
