@@ -20,5 +20,5 @@ django-select2
 mysqlclient
 pytz
 
-git+https://github.com/Alir3z4/cmsplugin-simple-markdown    # install directly from source until PyPi release is up to date
-git+https://github.com/jbazik/django-rss-plugin             # use this until jbazik's PR against https://github.com/zgwmike/django-rss-plugin is merged
+git+https://github.com/Alir3z4/cmsplugin-simple-markdown    # install from source until PyPi release is up to date
+git+https://github.com/zgwmike/django-rss-plugin            # install from source until PyPi release is up to date
