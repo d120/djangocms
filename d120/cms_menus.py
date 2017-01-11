@@ -15,17 +15,21 @@ class D120NavigationModifier(Modifier):
         if breadcrumb:
             language = get_language()
             # take the nodes relevant for the breadcrumb
-            selected_node = next(n for n in nodes if n.selected and n.attr["is_page"])
-            page_nodes = [selected_node] + selected_node.get_ancestors()
-            nodes_by_id = {n.id: n for n in page_nodes}
-            # fetch relevant fields from the database
-            titles = Title.objects.filter(page_id__in=[n.id for n in page_nodes]).values('page_id', 'language', 'page_title', 'title')
+            selected_node = next(n for n in nodes if n.selected)
+            breadcrumb_nodes = [selected_node] + selected_node.get_ancestors()
 
+            page_nodes = {n.id: n for n in breadcrumb_nodes if n.attr.get("is_page")}
+            # fetch relevant fields from the database
+            titles = Title.objects.filter(page_id__in=page_nodes.keys()).values('page_id', 'language', 'page_title', 'title')
             for t in titles:
-                node = nodes_by_id[t['page_id']]
+                node = page_nodes[t['page_id']]
                 # make the page_title attribute accessible for the breadcrumb
                 if language == t['language'] or 'page_title' not in node.attr:
                     node.attr['page_title'] = t['page_title'] if t['page_title'] else t['title']
+
+            # assign this attribute for non-page nodes
+            for node in (n for n in breadcrumb_nodes if not n.attr.get("is_page")):
+                node.attr['page_title'] = node.title
 
         elif post_cut:
             language = get_language()
