@@ -42,7 +42,7 @@ CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
         'LOCATION': 'redis://127.0.0.1:6379/0',
-        'KEY-PREFIX': 'd120-djangocms',
+        'KEY_PREFIX': 'd120-djangocms',
     }
 }
 
