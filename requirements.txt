@@ -1,13 +1,14 @@
 # major packages where new versions might introduce incompatibilities
 # test new major versions and update this file accordingly
 Django<1.10
-django-cms<3.4
+django-cms<3.5
 
 # a bunch of packages installed without regarding their versions
 # when (temporary) pinning of versions is necessary, comment on the reasoning
 aldryn-bootstrap3
 cmsplugin-filer
 djangocms-column
+djangocms-history
 djangocms-inherit
 djangocms-link
 djangocms-redirect
@@ -15,7 +16,6 @@ djangocms-style
 djangocms-text-ckeditor
 django-auth-ldap
 django-redis
-django-reversion<2.0        # quickfix for compatibility; will be removed with django-cms 3.4 and when third-party revision module is available
 django-select2
 mysqlclient
 pytz

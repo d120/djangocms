@@ -56,7 +56,7 @@ INSTALLED_APPS = (
     'djangocms_inherit',
     'djangocms_link',
     'djangocms_redirect',
-    'reversion',
+    'djangocms_history',
     'aldryn_bootstrap3',
     'rssplugin',
     'd120'
