@@ -57,8 +57,6 @@ INSTALLED_APPS = (
     'djangocms_link',
     'djangocms_redirect',
     'reversion',
-    'django_markdown',
-    'cmsplugin_simple_markdown',
     'aldryn_bootstrap3',
     'rssplugin',
     'd120'
@@ -110,10 +108,6 @@ TEMPLATES = [
         },
     },
 ]
-
-MIGRATION_MODULES = {
-    'cmsplugin_simple_markdown': 'cmsplugin_simple_markdown.migrations_django',
-}
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
