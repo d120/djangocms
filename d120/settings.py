@@ -59,7 +59,7 @@ INSTALLED_APPS = (
     'djangocms_history',
     'aldryn_bootstrap3',
     'rssplugin',
-    'd120'
+    'd120',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -103,7 +103,7 @@ TEMPLATES = [
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
-                'django.template.loaders.eggs.Loader'
+                'django.template.loaders.eggs.Loader',
             ],
         },
     },
@@ -113,7 +113,7 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters'
+    'easy_thumbnails.processors.filters',
 )
 
 ROOT_URLCONF = 'd120.urls'
