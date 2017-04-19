@@ -34,7 +34,7 @@ class D120NavigationModifier(Modifier):
         elif post_cut:
             language = get_language()
             # take the nodes relevant for the menu
-            page_nodes = {n.id: n for n in nodes if n.attr["is_page"]}
+            page_nodes = {n.id: n for n in nodes if n.attr.get("is_page")}
             # fetch relevant fields from the database
             titles = Title.objects.filter(page_id__in=page_nodes.keys()).values('page_id', 'language', 'page__menuentrymarginextension__additional_margin', 'menuentryheadlineextension__headline')
 
