@@ -60,6 +60,9 @@ INSTALLED_APPS = (
     'aldryn_bootstrap3',
     'rssplugin',
     'd120',
+    'pyTUID',
+    'import_export',
+    'pyBuchaktion',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,6 +83,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.language.LanguageCookieMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
+    'pyTUID.middleware.TUIDMiddleware',
 )
 
 TEMPLATES = [
@@ -220,3 +224,8 @@ FILER_ALLOW_REGULAR_USERS_TO_ADD_ROOT_FOLDERS = True
 ### RSSPLUGIN ###
 
 CMS_RSS_PLUGIN_TEMPLATE = 'rss_feed.html'
+
+
+### PYTUID ###
+
+TUID_SERVER_URL = 'https://sso.example.com'

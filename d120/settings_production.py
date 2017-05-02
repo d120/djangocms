@@ -99,3 +99,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'djangocms'
 EMAIL_HOST_PASSWORD = secrets.MAIL_PASSWORD
+
+
+### PYTUID ###
+
+TUID_SERVER_URL = 'https://sso.hrz.tu-darmstadt.de'

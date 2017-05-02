@@ -15,6 +15,7 @@ urlpatterns = i18n_patterns(
     url(r'^admin/', admin.site.urls),
     url(r'^sitemap\.xml$', django.contrib.sitemaps.views.sitemap, {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^select2/', include('django_select2.urls')),
+    url(r'tuid/', include('pyTUID.urls')),
     url(r'^', include('cms.urls')),
 )
 

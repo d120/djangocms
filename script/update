@@ -15,7 +15,7 @@ fi
 
 git pull
 bower install
-pip install --upgrade -r requirements.txt
+pip install --upgrade -r requirements.txt --process-dependency-links
 cd d120 && ../manage.py compilemessages && cd ..
 if [ "$1" = "--prod" ]; then
     ./manage.py collectstatic --noinput
