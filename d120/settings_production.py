@@ -104,3 +104,4 @@ EMAIL_HOST_PASSWORD = secrets.MAIL_PASSWORD
 ### PYTUID ###
 
 TUID_SERVER_URL = 'https://sso.hrz.tu-darmstadt.de'
+TUID_FORCE_SERVICE_URL = 'https://www.fachschaft.informatik.tu-darmstadt.de/tuid/login/'
