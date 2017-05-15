@@ -17,6 +17,7 @@ djangocms-text-ckeditor
 django-auth-ldap
 django-redis
 django-select2
+django-sslserver
 mysqlclient
 pytz
 

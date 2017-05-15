@@ -59,6 +59,7 @@ INSTALLED_APPS = (
     'djangocms_history',
     'aldryn_bootstrap3',
     'rssplugin',
+    'sslserver',
     'd120',
     'pyTUID',
     'import_export',

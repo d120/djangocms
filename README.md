@@ -16,6 +16,8 @@ script/update
 ./manage.py runserver
 ```
 
+To test functionality that needs a TLS capable server, one can run `./manage.py runsslserver`.
+
 Note that some of the required Python packages have other dependencies, e.g. to C libraries which one can install using the distribution's package manager. Which exactly can differ but starting a web search when pip install shows an error typically gives good results. Additionally, bower must be installed (maybe via npm) for frontend dependency management.
 
 ## Important Notes on Settings
