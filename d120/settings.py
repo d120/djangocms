@@ -60,9 +60,10 @@ INSTALLED_APPS = (
     'aldryn_bootstrap3',
     'rssplugin',
     'sslserver',
+    'import_export',
+    'bootstrap3',
     'd120',
     'pyTUID',
-    'import_export',
     'pyBuchaktion',
 )
 
