@@ -1,0 +1,8 @@
+#!/bin/bash
+# setup environment for djangocms
+
+set -e
+
+virtualenv -p python3 venv
+source venv/bin/activate
+script/update "$1"
