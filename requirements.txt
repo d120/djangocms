@@ -24,4 +24,4 @@ pytz
 git+https://github.com/zgwmike/django-rss-plugin            # install from source until PyPi release is up to date
 
 # own packages installed from git
-git+https://github.com/d120/pyBuchaktion@v1.0
+git+https://github.com/d120/pyBuchaktion@v1.0.1
