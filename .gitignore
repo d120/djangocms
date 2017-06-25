@@ -5,8 +5,8 @@
 /static
 /media
 
-# frontend dependencies managed by bower
-d120/static/vendor
+# node stuff like frontend dependencies
+/node_modules
 
 # settings file containing secrets
 d120/settings_secrets.py

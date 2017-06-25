@@ -15,14 +15,9 @@
         {% addtoblock "css" %}
         <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/typeface-libre-franklin/index.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'd120/css/custom.css' %}" />
         <style>
-            @font-face {
-                font-family: 'Libre Franklin';
-                font-style: normal;
-                font-weight: 400;
-                src: url({% static 'vendor/Libre-Franklin/fonts/OTF/LibreFranklin-Regular.otf' %}) format('opentype');
-            }
             a, footer a:hover, .sidebar-nav a, .sidebar-nav a:hover {
                 color:{% page_color request.current_page %};
             }

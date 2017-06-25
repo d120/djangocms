@@ -18,7 +18,7 @@ script/update
 
 To test functionality that needs a TLS capable server, one can run `./manage.py runsslserver`.
 
-Note that some of the required Python packages have other dependencies, e.g. to C libraries which one can install using the distribution's package manager. Which exactly can differ but starting a web search when pip install shows an error typically gives good results. Additionally, bower must be installed (maybe via npm) for frontend dependency management.
+Note that some of the required Python packages have other dependencies, e.g. to C libraries which one can install using the distribution's package manager. Which exactly can differ but starting a web search when pip install shows an error typically gives good results. Additionally, npm must be installed for frontend dependency management.
 
 ## Important Notes on Settings
 
@@ -65,4 +65,4 @@ The same holds true for the Django framework. Maybe it is a good idea to stick w
 
 Before and after changing major versions, use the `script/check` wrapper script to check the project for potential problems (such as deprecations). Note that it may also output warnings in third party packages.
 
-Additionally, from time to time one should look for updated versions of the frontend dependencies listed in `bower.json`.
+Additionally, from time to time one should look for updated versions of the frontend dependencies listed in `package.json`.
