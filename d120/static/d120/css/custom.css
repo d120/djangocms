@@ -70,6 +70,13 @@ footer .row {
 .breadcrumb {
     background-color: inherit;
     padding: 0;
+    text-align: left;
+}
+.breadcrumb>li{
+    display: inline;
+}
+.language-chooser{
+    margin-left: 10px;
 }
 .sidebar-active,
 .sidebar-active:hover,
