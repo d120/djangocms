@@ -82,7 +82,6 @@ AUTH_LDAP_USER_FLAGS_BY_GROUP = {
 ### MAIL ###
 
 ADMINS = [
-    ('FSS', 'fss@fachschaft.informatik.tu-darmstadt.de'),
     ('UA-Webseite', 'webseite@fachschaft.informatik.tu-darmstadt.de'),
 ]
 
