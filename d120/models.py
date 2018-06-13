@@ -16,6 +16,7 @@ class PageColorExtension(PageExtension):
         ("#B90F22", _("Red")),
         ("#804597", _("Purple")),
         ("#00689D", _("Blue")),
+        ("004E73", _("DarkBlue")),
         ("#009D81", _("Turquoise")),
         ("#6A8B22", _("Green")),
     )
