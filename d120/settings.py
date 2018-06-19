@@ -230,4 +230,5 @@ CMS_RSS_PLUGIN_TEMPLATE = 'rss_feed.html'
 
 ### PYTUID ###
 
-TUID_SERVER_URL = 'https://sso.example.com'
+TUID_SERVER_URL = 'https://sso.tu-darmstadt.de/'
+TUID_FORCE_SERVICE_URL = 'https://localhost:8000/tuid/login/'
