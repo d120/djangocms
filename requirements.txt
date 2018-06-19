@@ -1,6 +1,6 @@
 # major packages where new versions might introduce incompatibilities
 # test new major versions and update this file accordingly
-Django<1.11
+Django<=1.11
 django-cms<3.5
 
 # a bunch of packages installed without regarding their versions
@@ -24,4 +24,4 @@ pytz
 git+https://github.com/zgwmike/django-rss-plugin            # install from source until PyPi release is up to date
 
 # own packages installed from git
-git+https://github.com/d120/pyBuchaktion@v1.1.5
+git+https://github.com/d120/pyBuchaktion@v1.1.6
