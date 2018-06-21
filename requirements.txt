@@ -26,3 +26,4 @@ git+https://github.com/divio/djangocms-column               # install from sourc
 
 # own packages installed from git
 git+https://github.com/d120/pyBuchaktion@v1.2.0
+git+https://github.com/d120/django-git-version
