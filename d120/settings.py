@@ -65,6 +65,7 @@ INSTALLED_APPS = (
     'd120',
     'pyTUID',
     'pyBuchaktion',
+    'git_version',
 )
 
 MIDDLEWARE_CLASSES = (
