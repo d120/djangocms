@@ -233,3 +233,8 @@ CMS_RSS_PLUGIN_TEMPLATE = 'rss_feed.html'
 
 TUID_SERVER_URL = 'https://sso.tu-darmstadt.de/'
 TUID_FORCE_SERVICE_URL = 'https://localhost:8000/tuid/login/'
+
+# application-specific-cookies
+CSRF_COOKIE_NAME = 'djangocms_csrftoken'
+SESSION_COOKIE_NAME = 'djangocms_sessionid'
+
