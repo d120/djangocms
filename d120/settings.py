@@ -58,6 +58,12 @@ INSTALLED_APPS = (
     'djangocms_redirect',
     'djangocms_history',
     'aldryn_bootstrap3',
+    'aldryn_apphooks_config',
+    'parler',
+    'taggit',
+    'taggit_autosuggest',
+    'meta',
+    'sortedm2m',
     'rssplugin',
     'sslserver',
     'import_export',
@@ -66,6 +72,7 @@ INSTALLED_APPS = (
     'pyTUID',
     'pyBuchaktion',
     'git_version',
+    'djangocms_blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -128,7 +135,8 @@ ROOT_URLCONF = 'd120.urls'
 WSGI_APPLICATION = 'd120.wsgi.application'
 
 SITE_ID = 1
-
+META_SITE_PROTOCOL = 'http'
+META_USE_SITES = True
 
 ### DATABASE ###
 
@@ -211,6 +219,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 CMS_TEMPLATES = (
     ('frontpage.html', 'Front Page'),
+    ('widepage.html', 'Wide Page'),
     ('standardpage.html', 'Standard Page'),
 )
 
@@ -238,3 +247,14 @@ TUID_FORCE_SERVICE_URL = 'https://localhost:8000/tuid/login/'
 CSRF_COOKIE_NAME = 'djangocms_csrftoken'
 SESSION_COOKIE_NAME = 'djangocms_sessionid'
 
+### DJANGOCMS BLOG ###
+
+PARLER_LANGUAGES = {
+  1: (
+    {'code': 'de',},
+    {'code': 'en',},
+  ),
+  'default': {
+    'fallbacks': ['en', 'it', 'fr'],
+  }
+}

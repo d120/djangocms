@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% load cms_tags menu_tags %}
+
+{% block page %}
+{% include "header.html" %}
+<div class="container">
+    <div id="content">
+        {% language_chooser 'language_chooser.html' %}
+        {% show_breadcrumb 0 "breadcrumb.html" %}
+        {% block content %}{% endblock content %}
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock page %}

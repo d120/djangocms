@@ -15,21 +15,25 @@ class D120NavigationModifier(Modifier):
         if breadcrumb:
             language = get_language()
             # take the nodes relevant for the breadcrumb
-            selected_node = next(n for n in nodes if n.selected)
-            breadcrumb_nodes = [selected_node] + selected_node.get_ancestors()
+            try:
+                selected_node = next(n for n in nodes if n.selected)
+                breadcrumb_nodes = [selected_node] + selected_node.get_ancestors()
 
-            page_nodes = {n.id: n for n in breadcrumb_nodes if n.attr.get("is_page")}
-            # fetch relevant fields from the database
-            titles = Title.objects.filter(page_id__in=page_nodes.keys()).values('page_id', 'language', 'page_title', 'title')
-            for t in titles:
-                node = page_nodes[t['page_id']]
-                # make the page_title attribute accessible for the breadcrumb
-                if language == t['language'] or 'page_title' not in node.attr:
-                    node.attr['page_title'] = t['page_title'] if t['page_title'] else t['title']
+                page_nodes = {n.id: n for n in breadcrumb_nodes if n.attr.get("is_page")}
+                # fetch relevant fields from the database
+                titles = Title.objects.filter(page_id__in=page_nodes.keys()).values('page_id', 'language', 'page_title', 'title')
+                for t in titles:
+                    node = page_nodes[t['page_id']]
+                    # make the page_title attribute accessible for the breadcrumb
+                    if language == t['language'] or 'page_title' not in node.attr:
+                        node.attr['page_title'] = t['page_title'] if t['page_title'] else t['title']
 
-            # assign this attribute for non-page nodes
-            for node in (n for n in breadcrumb_nodes if not n.attr.get("is_page")):
-                node.attr['page_title'] = node.title
+                # assign this attribute for non-page nodes
+                for node in (n for n in breadcrumb_nodes if not n.attr.get("is_page")):
+                    node.attr['page_title'] = node.title
+
+            except StopIteration as e:
+                pass
 
         elif post_cut:
             language = get_language()
