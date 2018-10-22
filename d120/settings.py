@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     'parler',
     'taggit',
     'taggit_autosuggest',
+    'cms_avatar',
     'avatar',
     'meta',
     'sortedm2m',

@@ -272,3 +272,27 @@ h1,h2,h3,h4,h5 {
 .media.post-author ul.tags li {
   display: inline;
 }
+
+/* Avatar Forms */
+.form-avatar #id_choice, .form-avatar #id_choices {
+  list-style-type: none;
+  padding: 0;
+}
+
+.form-avatar #id_choice li, .form-avatar #id_choices li {
+  display: inline-block;
+}
+
+.form-avatar #id_choice li img, .form-avatar #id_choices li img {
+  box-sizing: content-box;
+  border: 2px solid transparent;
+  padding: 0.3rem;
+}
+
+.form-avatar #id_choice input[type="radio"], .form-avatar #id_choices input[type="checkbox"] {
+  display: none;
+}
+
+.form-avatar #id_choice input:checked + img, .form-avatar #id_choices input:checked + img {
+  border-color: #888;
+}
