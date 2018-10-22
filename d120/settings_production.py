@@ -104,3 +104,8 @@ EMAIL_HOST_PASSWORD = secrets.MAIL_PASSWORD
 
 TUID_SERVER_URL = 'https://sso.tu-darmstadt.de'
 TUID_FORCE_SERVICE_URL = 'https://www.fachschaft.informatik.tu-darmstadt.de/tuid/login/'
+
+### SERVICE MENU ###
+
+SITE_URL = 'https://www.fachschaft.informatik.tu-darmstadt.de'
+BLOG_URL = 'https://daswesentliche.fachschaft.informatik.tu-darmstadt.de'

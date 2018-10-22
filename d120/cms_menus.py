@@ -15,8 +15,20 @@ class D120NavigationModifier(Modifier):
         if breadcrumb:
             language = get_language()
             # take the nodes relevant for the breadcrumb
-            try:
-                selected_node = next(n for n in nodes if n.selected)
+
+            selected_nodes = [n for n in nodes if n.selected]
+            selected_node_count = len(selected_nodes)
+            if (selected_node_count == 0):
+                pass
+            else:
+                # For some reason, it is possible that apphooks are marked as selected, when their descendants are active
+                # For some other reason, this only happens to published pages
+                if breadcrumb and selected_node_count > 1:
+                    for node in selected_nodes[:-1]:
+                        node.selected = False
+
+                # Assuming pre-order menu traversal, use the last node that is selected
+                selected_node = selected_nodes[-1]
                 breadcrumb_nodes = [selected_node] + selected_node.get_ancestors()
 
                 page_nodes = {n.id: n for n in breadcrumb_nodes if n.attr.get("is_page")}
@@ -31,9 +43,6 @@ class D120NavigationModifier(Modifier):
                 # assign this attribute for non-page nodes
                 for node in (n for n in breadcrumb_nodes if not n.attr.get("is_page")):
                     node.attr['page_title'] = node.title
-
-            except StopIteration as e:
-                pass
 
         elif post_cut:
             language = get_language()

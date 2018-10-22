@@ -5,7 +5,6 @@ Beside that, it is imported from the production settings file.
 
 import os
 
-
 ### VARIABLES ###
 
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -62,6 +61,7 @@ INSTALLED_APPS = (
     'parler',
     'taggit',
     'taggit_autosuggest',
+    'avatar',
     'meta',
     'sortedm2m',
     'rssplugin',
@@ -113,6 +113,7 @@ TEMPLATES = [
                 'sekizai.context_processors.sekizai',
                 'django.template.context_processors.static',
                 'cms.context_processors.cms_settings',
+                'd120.context_processors.d120_context_processor',
             ],
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
@@ -220,6 +221,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CMS_TEMPLATES = (
     ('frontpage.html', 'Front Page'),
     ('widepage.html', 'Wide Page'),
+    ('blogpage.html', 'Blog Page'),
     ('standardpage.html', 'Standard Page'),
 )
 
@@ -249,12 +251,20 @@ SESSION_COOKIE_NAME = 'djangocms_sessionid'
 
 ### DJANGOCMS BLOG ###
 
-PARLER_LANGUAGES = {
-  1: (
-    {'code': 'de',},
-    {'code': 'en',},
-  ),
-  'default': {
-    'fallbacks': ['en', 'it', 'fr'],
-  }
-}
+from parler.utils.conf import get_parler_languages_from_django_cms
+PARLER_LANGUAGES = get_parler_languages_from_django_cms(CMS_LANGUAGES)
+
+### DJANGO-AVATAR ###
+AVATAR_PROVIDERS = (
+    'avatar.providers.PrimaryAvatarProvider',
+    'avatar.providers.DefaultAvatarProvider',
+)
+
+AVATAR_AUTO_GENERATE_SIZES = (64, 80, 128)
+AVATAR_DEFAULT_URL = '/d120/img/avatar.png'
+AVATAR_THUMB_FORMAT = 'PNG'
+
+### Service Menu ###
+SITE_URL = '/'
+BLOG_URL = '/daswesentliche'
+FORUM_URL = 'https://www.fachschaft.informatik.tu-darmstadt.de/forum'

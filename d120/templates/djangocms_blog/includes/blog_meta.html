@@ -1,9 +1,9 @@
-{% load i18n easy_thumbnails_tags cms_tags gravatar %}
+{% load i18n easy_thumbnails_tags cms_tags avatar_tags %}
 
 <div class="media post-author">
   <div class="media-left">
     <a href="#">
-      <img class="media-object" style="width: 64px" src="{% gravatar_url post.author.email %}" alt="{{post.author.get_full_name}}">
+      {% avatar post.author 64 class="media-object" %}
     </a>
   </div>
   <div class="media-body">

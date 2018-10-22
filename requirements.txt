@@ -18,6 +18,7 @@ django-auth-ldap
 django-redis
 django-select2<6.0
 django-sslserver
+django-avatar
 mysqlclient
 pytz
 
