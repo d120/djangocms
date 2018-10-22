@@ -18,6 +18,7 @@ class PageColorExtension(PageExtension):
         ("#00689D", _("Blue")),
         ("#009D81", _("Turquoise")),
         ("#6A8B22", _("Green")),
+        ("#0083CC", _("Light Blue")),
     )
     DEFAULT_COLOR = PAGE_COLORS[0][0]
     color = models.CharField(blank=True, choices=PAGE_COLORS, max_length=16, verbose_name=_("Color"))

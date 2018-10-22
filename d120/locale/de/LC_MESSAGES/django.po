@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-20 08:56+0200\n"
-"PO-Revision-Date: 2016-10-20 19:42+0200\n"
+"POT-Creation-Date: 2018-10-22 19:08+0200\n"
+"PO-Revision-Date: 2018-10-22 19:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -16,17 +16,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: cms_toolbars.py:29 models.py:12
 msgid "Page Color"
 msgstr "Seitenfarbe"
 
-#: cms_toolbars.py:42 models.py:32
+#: cms_toolbars.py:42 models.py:33
 msgid "Menu Entry Margin"
 msgstr "Menüeintragsabstand"
 
-#: cms_toolbars.py:53 models.py:43
+#: cms_toolbars.py:53 models.py:44
 msgid "Menu Entry Headline"
 msgstr "Menüeintragsüberschrift"
 
@@ -63,23 +63,27 @@ msgstr "Türkis"
 msgid "Green"
 msgstr "Grün"
 
-#: models.py:23
+#: models.py:21
+msgid "Light Blue"
+msgstr "Hellblau"
+
+#: models.py:24
 msgid "Color"
 msgstr "Farbe"
 
-#: models.py:33
+#: models.py:34
 msgid "Menu Entry Margins"
 msgstr "Menüeintragsabstände"
 
-#: models.py:34
+#: models.py:35
 msgid "Enable additional margin for menu entry"
 msgstr "Zusätzlichen Abstand für Menüeintrag aktivieren"
 
-#: models.py:44
+#: models.py:45
 msgid "Menu Entry Headlines"
 msgstr "Menüeintragsüberschriften"
 
-#: models.py:45
+#: models.py:46
 msgid "Menu entry headline"
 msgstr "Menüeintragsüberschrift"
 
@@ -87,14 +91,14 @@ msgstr "Menüeintragsüberschrift"
 msgid "read more"
 msgstr "weiterlesen"
 
-#: templates/djangocms_blog/includes/blog_meta.html:27
+#: templates/djangocms_blog/includes/blog_meta.html:26
 msgid "written on"
 msgstr "geschrieben am"
 
-#: templates/djangocms_blog/includes/blog_meta.html:29
+#: templates/djangocms_blog/includes/blog_meta.html:28
 msgid "by"
 msgstr "von"
 
-#: templates/djangocms_blog/includes/blog_meta.html:32
+#: templates/djangocms_blog/includes/blog_meta.html:31
 msgid "for"
 msgstr "für den"
