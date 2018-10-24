@@ -1,0 +1,3 @@
+[submodule "d120/static/d120"]
+	path = d120/static/d120
+	url = git@github.com:d120/d120-theme.git
