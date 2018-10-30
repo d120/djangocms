@@ -14,6 +14,7 @@ if [ "$1" = "--prod" ]; then
 fi
 
 git pull
+git submodule update
 npm install
 pip install --upgrade -r requirements.txt --process-dependency-links
 cd d120 && ../manage.py compilemessages && cd ..

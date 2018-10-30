@@ -7,7 +7,7 @@ This is an instance of django CMS used to build d120.de.
 A quick development setup is much simpler than the whole installation for production. Just do the following steps to get a local instance running:
 
 ```
-git clone THIS_REPO
+git clone --recurse-submodules THIS_REPO
 cd djangocms
 virtualenv -p python3 venv
 source venv/bin/activate
