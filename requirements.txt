@@ -20,6 +20,7 @@ django-select2<6.0
 django-sslserver
 mysqlclient
 pytz
+djangocms-forms
 
 git+https://github.com/zgwmike/django-rss-plugin            # install from source until PyPi release is up to date
 git+https://github.com/divio/djangocms-column               # install from source until PyPi release is up to date

@@ -66,6 +66,7 @@ INSTALLED_APPS = (
     'pyTUID',
     'pyBuchaktion',
     'git_version',
+    'djangocms_forms',
 )
 
 MIDDLEWARE_CLASSES = (

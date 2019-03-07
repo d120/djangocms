@@ -11,7 +11,11 @@ import django.contrib.sitemaps.views
 
 admin.autodiscover()
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
+        url(r'', include('djangocms_forms.urls')),
+]
+
+urlpatterns += i18n_patterns(
     url(r'^admin/', admin.site.urls),
     url(r'^sitemap\.xml$', django.contrib.sitemaps.views.sitemap, {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^select2/', include('django_select2.urls')),
