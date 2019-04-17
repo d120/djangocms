@@ -47,36 +47,53 @@ INSTALLED_APPS = (
     'djangocms_column',
     'filer',
     'easy_thumbnails',
-    'cmsplugin_filer_image',
-    'cmsplugin_filer_file',
-    'cmsplugin_filer_folder',
-    'cmsplugin_filer_teaser',
-    'cmsplugin_filer_utils',
-    'cmsplugin_filer_video',
-    'djangocms_inherit',
-    'djangocms_link',
+#    'cmsplugin_filer_image',
+#    'cmsplugin_filer_file',
+#    'cmsplugin_filer_folder',
+#    'cmsplugin_filer_teaser',
+#    'cmsplugin_filer_utils',
+#    'cmsplugin_filer_video',
+#    'djangocms_inherit',
     'djangocms_redirect',
     'djangocms_history',
-    'aldryn_bootstrap3',
-    'rssplugin',
+#    'aldryn_bootstrap3',
+    'djangocms_icon',
+    'djangocms_link',
+    'djangocms_picture',
+#    'djangocms_forms',
+    'djangocms_bootstrap4',
+    'djangocms_bootstrap4.contrib.bootstrap4_alerts',
+    'djangocms_bootstrap4.contrib.bootstrap4_badge',
+    'djangocms_bootstrap4.contrib.bootstrap4_card',
+    'djangocms_bootstrap4.contrib.bootstrap4_carousel',
+    'djangocms_bootstrap4.contrib.bootstrap4_collapse',
+    'djangocms_bootstrap4.contrib.bootstrap4_content',
+    'djangocms_bootstrap4.contrib.bootstrap4_grid',
+    'djangocms_bootstrap4.contrib.bootstrap4_jumbotron',
+    'djangocms_bootstrap4.contrib.bootstrap4_link',
+    'djangocms_bootstrap4.contrib.bootstrap4_listgroup',
+    'djangocms_bootstrap4.contrib.bootstrap4_media',
+    'djangocms_bootstrap4.contrib.bootstrap4_picture',
+    'djangocms_bootstrap4.contrib.bootstrap4_tabs',
+    'djangocms_bootstrap4.contrib.bootstrap4_utilities',
+#    'rssplugin',
     'sslserver',
     'import_export',
     'bootstrap3',
     'd120',
-    'pyTUID',
-    'pyBuchaktion',
+#    'pyTUID',
+#    'pyBuchaktion',
     'git_version',
-    'djangocms_forms',
+
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
     'django.middleware.cache.UpdateCacheMiddleware',
     'djangocms_redirect.middleware.RedirectMiddleware',
     'cms.middleware.utils.ApphookReloadMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -87,8 +104,8 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.language.LanguageCookieMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
-    'pyTUID.middleware.TUIDMiddleware',
-)
+#    'pyTUID.middleware.TUIDMiddleware',
+]
 
 TEMPLATES = [
     {
@@ -111,7 +128,7 @@ TEMPLATES = [
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
-                'django.template.loaders.eggs.Loader',
+#                'django.template.loaders.eggs.Loader',
             ],
         },
     },
@@ -238,4 +255,3 @@ TUID_FORCE_SERVICE_URL = 'https://localhost:8000/tuid/login/'
 # application-specific-cookies
 CSRF_COOKIE_NAME = 'djangocms_csrftoken'
 SESSION_COOKIE_NAME = 'djangocms_sessionid'
-

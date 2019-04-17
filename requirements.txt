@@ -1,11 +1,11 @@
 # major packages where new versions might introduce incompatibilities
 # test new major versions and update this file accordingly
-Django<2
-django-cms<3.5
+Django<2.2
+django-cms
 
 # a bunch of packages installed without regarding their versions
 # when (temporary) pinning of versions is necessary, comment on the reasoning
-aldryn-bootstrap3
+djangocms-bootstrap4
 cmsplugin-filer
 # djangocms-colum
 djangocms-history
@@ -20,9 +20,10 @@ django-select2<6.0
 django-sslserver
 mysqlclient
 pytz
-djangocms-forms
+#djangocms-forms
 
-git+https://github.com/zgwmike/django-rss-plugin            # install from source until PyPi release is up to date
+#git+https://github.com/divio/djangocms-attributes-field
+#git+https://github.com/zgwmike/django-rss-plugin            # install from source until PyPi release is up to date
 git+https://github.com/divio/djangocms-column               # install from source until PyPi release is up to date
 
 # own packages installed from git

@@ -16,8 +16,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
                 ('headline', models.CharField(verbose_name='Menu entry headline', max_length=64, blank=True)),
-                ('extended_object', models.OneToOneField(editable=False, to='cms.Title')),
-                ('public_extension', models.OneToOneField(editable=False, null=True, related_name='draft_extension', to='d120.MenuEntryHeadlineExtension')),
+                ('extended_object', models.OneToOneField(editable=False, to='cms.Title', on_delete=models.CASCADE)),
+                ('public_extension', models.OneToOneField(editable=False, null=True, related_name='draft_extension', to='d120.MenuEntryHeadlineExtension', on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name_plural': 'Menu Entry Headlines',
@@ -29,8 +29,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
                 ('additional_margin', models.BooleanField(default=False, verbose_name='Enable additional margin for menu entry')),
-                ('extended_object', models.OneToOneField(editable=False, to='cms.Page')),
-                ('public_extension', models.OneToOneField(editable=False, null=True, related_name='draft_extension', to='d120.MenuEntryMarginExtension')),
+                ('extended_object', models.OneToOneField(editable=False, to='cms.Page', on_delete=models.CASCADE)),
+                ('public_extension', models.OneToOneField(editable=False, null=True, related_name='draft_extension', to='d120.MenuEntryMarginExtension', on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name_plural': 'Menu Entry Margins',
@@ -42,8 +42,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
                 ('color', models.CharField(choices=[('#d35400', 'Orange'), ('#c0392b', 'Red'), ('#8e44ad', 'Purple'), ('#2980b9', 'Blue'), ('#16a085', 'Turquoise'), ('#27ae60', 'Green')], verbose_name='Color', max_length=16, blank=True)),
-                ('extended_object', models.OneToOneField(editable=False, to='cms.Page')),
-                ('public_extension', models.OneToOneField(editable=False, null=True, related_name='draft_extension', to='d120.PageColorExtension')),
+                ('extended_object', models.OneToOneField(editable=False, to='cms.Page', on_delete=models.CASCADE)),
+                ('public_extension', models.OneToOneField(editable=False, null=True, related_name='draft_extension', to='d120.PageColorExtension', on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name_plural': 'Page Colors',
