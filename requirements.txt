@@ -10,7 +10,6 @@ djangocms-bootstrap4
 cmsplugin-filer
 # djangocms-colum
 djangocms-history
-djangocms-inherit
 djangocms-link
 djangocms-redirect
 djangocms-style
@@ -26,6 +25,7 @@ pytz
 #git+https://github.com/divio/djangocms-attributes-field
 git+https://github.com/andersinno/django-rss-plugin            # install from source until PyPi release is up to date
 git+https://github.com/divio/djangocms-column               # install from source until PyPi release is up to date
+git+https://github.com/isotoma/djangocms-inherit
 
 # own packages installed from git
 #git+https://github.com/d120/pyBuchaktion@v1.2.0
