@@ -5,6 +5,7 @@ django-cms
 
 # a bunch of packages installed without regarding their versions
 # when (temporary) pinning of versions is necessary, comment on the reasoning
+django-import-export
 djangocms-bootstrap4
 cmsplugin-filer
 # djangocms-colum
@@ -23,9 +24,9 @@ pytz
 #djangocms-forms
 
 #git+https://github.com/divio/djangocms-attributes-field
-#git+https://github.com/zgwmike/django-rss-plugin            # install from source until PyPi release is up to date
+git+https://github.com/andersinno/django-rss-plugin            # install from source until PyPi release is up to date
 git+https://github.com/divio/djangocms-column               # install from source until PyPi release is up to date
 
 # own packages installed from git
-git+https://github.com/d120/pyBuchaktion@v1.2.0
+#git+https://github.com/d120/pyBuchaktion@v1.2.0
 git+https://github.com/d120/django-git-version
