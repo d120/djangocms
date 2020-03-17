@@ -16,5 +16,5 @@ def page_color(page):
             color = p.pagecolorextension.color
             if color:
                 return color
-        p = p.parent
+        p = p.parent_page
     return PageColorExtension.DEFAULT_COLOR
