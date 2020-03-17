@@ -21,7 +21,9 @@
             a, footer a:hover, .sidebar-nav a, .sidebar-nav a:hover {
                 color:{% page_color request.current_page %};
             }
-            .navbar, .sidebar-active, .sidebar-active:hover, .sidebar-active:focus, .sidebar-active > a:hover, .sidebar-active > a:focus, #mainLogo {
+            .sidebar-active, .sidebar-active:hover, .sidebar-active:focus,
+                .sidebar-active > a:hover, .sidebar-active > a:focus, #mainLogo,
+                #colored-navbar {
                 background-color:{% page_color request.current_page %}!important;
             }
             .sidebar-active, .sidebar-active:hover {
