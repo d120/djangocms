@@ -58,11 +58,14 @@ footer .row {
 #content {
     text-align: justify;
 }
-.navbar-default .navbar-nav li a {
+.navbar-logos {
+    padding: 0px;
+}
+.navbar-nav li a {
     color: #f5f5f5;
     font-size: 18px;
 }
-.navbar-default .navbar-nav li a:hover {
+.navbar-nav li a:hover {
     background-color: #777777;
     background-color: rgba(0, 0, 0, .5);
     color: #f5f5f5;
@@ -166,12 +169,12 @@ li.headline:hover {
     padding-bottom: 15px;
     margin-top: 25px;
 }
-.navbar-toggle {
+.navbar-toggler {
     float: none;
     border-color: #999999;
 }
-.navbar-toggle .icon-bar {
-    background-color: #999999;
+.navbar-toggler-icon {
+    color: #999999;
 }
 .navbar-collapse {
     padding: 0;
