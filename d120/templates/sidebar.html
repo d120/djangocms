@@ -1,12 +1,12 @@
 {% load menu_tags %}
-<nav class="navbar navbar-light navbar-expand-lg">
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
+<nav class="navbar navbar-light">
+    <button type="button" class="navbar-toggler d-sm-none" data-toggle="collapse" data-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
         <span class="sr-only">Toggle navigation</span>
         <span class="navbar-toggler-icon"></span>
     </button>
-    <!-- <div class="collapse navbar-collapse" id="sidebar"> -->
-        <ul class="collapse navbar-collapse nav sidebar-nav flex-column align-items-start" id="sidebar">
+    <div class="collapse navbar-collapse d-sm-inline" id="sidebar">
+        <ul class="nav sidebar-nav flex-column">
             {% show_menu 1 5 0 1 "menu.html" %}
         </ul>
-    <!-- </div> -->
+    </div>
 </nav>
