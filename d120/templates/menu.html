@@ -2,9 +2,9 @@
 
 {% for child in children %}
     {% if child.attr.headline %}
-        <li class="nav-item headline text-left">{{ child.attr.headline }}</li>
+        <li class="nav-item headline">{{ child.attr.headline }}</li>
     {% endif %}
-    <li class="nav-item text-left {% if child.menu_level == 0 %}{% if child.selected or child.ancestor %}sidebar-active{% endif %}{% endif %} {% if child.attr.additional_margin %}additionalMargin{% endif %}">
+    <li class="nav-item {% if child.menu_level == 0 %}{% if child.selected or child.ancestor %}sidebar-active{% endif %}{% endif %} {% if child.attr.additional_margin %}additionalMargin{% endif %}">
         <a href="{{ child.get_absolute_url }}">
             <span class="{% if child.selected %}sidebar-active-link{% endif %}">
                 {{ child.get_menu_title }}
