@@ -3,9 +3,9 @@
     <ol class="breadcrumb">
     {% for ancestor in ancestors %}
         {% if not forloop.last %}
-            <li><a href="{{ ancestor.get_absolute_url }}">{{ancestor.attr.page_title}}</a></li>
+            <li class="breadcrumb-item"><a href="{{ ancestor.get_absolute_url }}">{{ancestor.attr.page_title}}</a></li>
         {% else %}
-            <li class="active">{{ancestor.attr.page_title}}</li>
+            <li class="breadcrumb-item active">{{ancestor.attr.page_title}}</li>
         {% endif %}
     {% endfor %}
     </ol>

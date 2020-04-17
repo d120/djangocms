@@ -58,11 +58,14 @@ footer .row {
 #content {
     text-align: justify;
 }
-.navbar-default .navbar-nav li a {
+.navbar-logos {
+    padding: 0px;
+}
+.navbar-nav li a {
     color: #f5f5f5;
     font-size: 18px;
 }
-.navbar-default .navbar-nav li a:hover {
+.navbar-nav li a:hover {
     background-color: #777777;
     background-color: rgba(0, 0, 0, .5);
     color: #f5f5f5;
@@ -89,15 +92,21 @@ footer .row {
 }
 .sidebar-nav {
     border-left: 5px solid #999999;
-    list-style: none;
-    margin: 0;
 }
 .sidebar-nav > li > a {
     padding: 10px 15px 10px 0;
 }
+.sidebar-nav > li > a:focus {
+    background-color: transparent;
+}
 .sidebar-nav > li {
     padding-left: 20px;
     margin-left: -5px;
+}
+.sidebar-nav > li:hover {
+    border-left: 5px solid #999999;
+    padding-left: 15px;
+    background-color: #eee;
 }
 li.sidebar-active {
     padding-left: 15px;
@@ -132,26 +141,13 @@ li.sidebar-active {
     }
 }
 .header-navbar {
-    list-style: none;
-    margin: 0;
     padding: 0;
 }
-.header-navbar > li {
-    display: inline-block;
-    height: 100%;
-}
-.header-navbar > li > a {
+.header-navbar-link {
     line-height: 25px;
-}
-.sidebar-nav > li:hover {
-    border-left: 5px solid #999999;
-    padding-left: 15px;
-    background-color: #eee;
+    padding: 15px !important;
 }
 li.headline:hover {
-    background-color: transparent;
-}
-.sidebar-nav > li > a:focus {
     background-color: transparent;
 }
 .rss-plugin {
@@ -165,12 +161,12 @@ li.headline:hover {
     padding-bottom: 15px;
     margin-top: 25px;
 }
-.navbar-toggle {
+.navbar-toggler {
     float: none;
     border-color: #999999;
 }
-.navbar-toggle .icon-bar {
-    background-color: #999999;
+.navbar-toggler-icon {
+    color: #999999;
 }
 .navbar-collapse {
     padding: 0;

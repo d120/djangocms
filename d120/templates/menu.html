@@ -2,10 +2,14 @@
 
 {% for child in children %}
     {% if child.attr.headline %}
-        <li class="headline">{{ child.attr.headline }}</li>
+        <li class="nav-item headline">{{ child.attr.headline }}</li>
     {% endif %}
-    <li class="{% if child.menu_level == 0 %}{% if child.selected or child.ancestor %}sidebar-active{% endif %}{% endif %} {% if child.attr.additional_margin %}additionalMargin{% endif %}">
-    <a href="{{ child.get_absolute_url }}"><span class="{% if child.selected %}sidebar-active-link{% endif %}">{{ child.get_menu_title }}</span></a>
+    <li class="nav-item {% if child.menu_level == 0 %}{% if child.selected or child.ancestor %}sidebar-active{% endif %}{% endif %} {% if child.attr.additional_margin %}additionalMargin{% endif %}">
+        <a href="{{ child.get_absolute_url }}">
+            <span class="{% if child.selected %}sidebar-active-link{% endif %}">
+                {{ child.get_menu_title }}
+            </span>
+        </a>
     {% if child.children %}
         <ul class="menuIndent">
             {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
