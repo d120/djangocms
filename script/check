@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # wrapper script to check project for potential problems
 
 # activate virtualenv when necessary

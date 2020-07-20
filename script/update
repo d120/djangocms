@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # perform necessary actions to update the djangocms website
 
 set -e
