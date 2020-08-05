@@ -7,6 +7,7 @@ pkgs.mkShell {
     libmysqlclient
     openldap
     cyrus_sasl
+    gettext
   ];
 
   shellHook = ''
