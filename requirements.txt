@@ -1,25 +1,25 @@
 # major packages where new versions might introduce incompatibilities
 # test new major versions and update this file accordingly
-Django<2.3
-django-cms
+Django==2.2.15
+django-cms==3.7.4
 
 # a bunch of packages installed without regarding their versions
 # when (temporary) pinning of versions is necessary, comment on the reasoning
-django-import-export
-djangocms-bootstrap4
+django-import-export==2.3.0
+djangocms-bootstrap4==1.6.0
 # cmsplugin-filer
 # djangocms-colum
-djangocms-history
-djangocms-link
-djangocms-redirect
-djangocms-style
-djangocms-text-ckeditor
-django-auth-ldap
-django-redis
-django-select2<8.0
-django-sslserver
-mysqlclient
-pytz
+djangocms-history==1.2.0
+djangocms-link==2.6.1
+djangocms-redirect==0.5.0
+djangocms-style==2.3.0
+djangocms-text-ckeditor==3.10.0
+django-auth-ldap==2.2.0
+django-redis==4.12.1
+django-select2==7.4.2
+django-sslserver==0.22
+mysqlclient==2.0.1
+pytz==2020.1
 #djangocms-forms
 
 #git+https://github.com/divio/djangocms-attributes-field
