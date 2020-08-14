@@ -8,12 +8,12 @@ django-cms==3.7.4
 django-import-export==2.3.0
 djangocms-bootstrap4==1.6.0
 # cmsplugin-filer
-# djangocms-colum
 djangocms-history==1.2.0
 djangocms-link==2.6.1
 djangocms-redirect==0.5.0
 djangocms-style==2.3.0
 djangocms-text-ckeditor==3.10.0
+djangocms-column==1.11.0
 django-auth-ldap==2.2.0
 django-redis==4.12.1
 django-select2==7.4.2
@@ -24,11 +24,6 @@ pytz==2020.1
 
 #git+https://github.com/divio/djangocms-attributes-field
 git+https://github.com/andersinno/django-rss-plugin            # install from source until PyPi release is up to date
-
-#djangocms-column
-#git+https://github.com/divio/djangocms-column               # install from source until PyPi release is up to date
-#git+https://github.com/ccooke/djangocms-column.git         # Maybe added support for Django 2.2
-git+https://github.com/beatjoerg/djangocms-column
 
 git+https://github.com/isotoma/djangocms-inherit
 git+https://github.com/pawelmarkowski/cmsplugin-filer
