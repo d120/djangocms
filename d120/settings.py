@@ -7,6 +7,8 @@ import os
 
 
 ### VARIABLES ###
+from django.urls import reverse_lazy
+from django.utils.text import format_lazy
 
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -61,6 +63,7 @@ INSTALLED_APPS = (
     'djangocms_link',
     'djangocms_picture',
 #    'djangocms_forms',
+    'django_select2',
     'djangocms_bootstrap4',
     'djangocms_bootstrap4.contrib.bootstrap4_alerts',
     'djangocms_bootstrap4.contrib.bootstrap4_badge',
@@ -84,7 +87,11 @@ INSTALLED_APPS = (
 #    'pyTUID',
 #    'pyBuchaktion',
     'git_version',
-
+    'cmsplugin_cascade',
+    'cmsplugin_cascade.clipboard',  # optional
+    'cmsplugin_cascade.extra_fields',  # optional
+    'cmsplugin_cascade.sharable',  # optional
+    'cmsplugin_cascade.segmentation',  # optional
 )
 
 MIDDLEWARE = [
@@ -230,12 +237,16 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CMS_TEMPLATES = (
     ('frontpage.html', 'Front Page'),
     ('standardpage.html', 'Standard Page'),
+    ('timeline_element.html', 'Timeline Element'),
 )
 
 CMS_PERMISSION = True
 
-CMS_PLACEHOLDER_CONF = {}
-
+CMS_PLACEHOLDER_CONF = {
+    'content': {
+        'parent_classes': {'BootstrapContainerPlugin': None,},
+    },
+}
 
 ### FILER ###
 
@@ -251,6 +262,28 @@ CMS_RSS_PLUGIN_TEMPLATE = 'rss_feed.html'
 
 TUID_SERVER_URL = 'https://sso.tu-darmstadt.de/'
 TUID_FORCE_SERVICE_URL = 'https://localhost:8000/tuid/login/'
+
+
+### CASCADE ###
+
+CMSPLUGIN_CASCADE_PLUGINS = ['cmsplugin_cascade.bootstrap4']
+CMSPLUGIN_CASCADE_PLUGINS.append('cmsplugin_cascade.generic')
+
+CKEDITOR_SETTINGS = {
+    'language': '{{ language }}',
+    'skin': 'moono-lisa',
+    'toolbar': 'CMS',
+    'stylesSet': format_lazy('default:{}', reverse_lazy('admin:cascade_texteditor_config')),
+}
+
+CMSPLUGIN_CASCADE = {
+    'plugins_with_extra_render_templates': {
+            'CustomSnippetPlugin': [
+                ('timeline_element.html', "Timeline Element"),
+                # other tuples
+            ],
+        },
+}
 
 # application-specific-cookies
 CSRF_COOKIE_NAME = 'djangocms_csrftoken'

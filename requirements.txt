@@ -21,6 +21,7 @@ django-sslserver==0.22
 mysqlclient==2.0.1
 pytz==2020.1
 #djangocms-forms
+djangocms-cascade==1.3.3
 
 #git+https://github.com/divio/djangocms-attributes-field
 git+https://github.com/andersinno/django-rss-plugin            # install from source until PyPi release is up to date
