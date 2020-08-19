@@ -114,6 +114,8 @@ MIDDLEWARE = [
 #    'pyTUID.middleware.TUIDMiddleware',
 ]
 
+APPEND_SLASH = False
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -269,6 +271,7 @@ TUID_FORCE_SERVICE_URL = 'https://localhost:8000/tuid/login/'
 
 CMSPLUGIN_CASCADE_PLUGINS = ['cmsplugin_cascade.bootstrap4']
 CMSPLUGIN_CASCADE_PLUGINS.append('cmsplugin_cascade.generic')
+CMSPLUGIN_CASCADE_PLUGINS.append('d120')
 
 CKEDITOR_SETTINGS = {
     'language': '{{ language }}',
@@ -285,6 +288,7 @@ CMSPLUGIN_CASCADE = {
                 # other tuples
             ],
         },
+    'alien_plugins': ['ToDoListPlugin'],
 }
 
 # application-specific-cookies
