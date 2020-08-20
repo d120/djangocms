@@ -1,0 +1,37 @@
+{% load sekizai_tags d120_cascade %}
+
+{% addtoblock "js" %}
+    <script>
+        let forms = document.getElementsByClassName('todolist');
+        let myStorage = window.localStorage;
+
+        function update(event) {
+            let checked = form.querySelectorAll(':checked');
+            var isChecked = false;
+            checked.forEach(input => {
+                if (input == event.target) {
+                    isChecked = true;
+                }
+            });
+            myStorage.setItem(event.target.name, isChecked ? 'true' : 'false');
+        }
+
+        for (var form of forms) {
+            var inputs = form.querySelectorAll('input[type="checkbox"]');
+            for (const [i, elem] of inputs.entries()) {
+                let value = myStorage.getItem(elem.name) == 'true';
+                console.log("Loading", elem.name, ":", value);
+                if (value) elem.checked = "checked";
+                elem.addEventListener('input', update);
+            }
+        }
+    </script>
+{% endaddtoblock %}
+
+<h5>ToDo: <span style="font-size: 0.5em;vertical-align: top;cursor:help;" class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Wird lokal im Browser gespeichert">?</span></h5>
+
+<form class="todolist" autocomplete="off">
+    {% for item in instance.glossary.items|to_todo_item_list %}
+        <input id="{{ item.id }}" type="checkbox" name="{{ item.id }}"> <label for="{{ item.id }}">{{ item.label }}</label><br>
+    {% endfor %}
+</form>
