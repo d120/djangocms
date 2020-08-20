@@ -239,7 +239,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CMS_TEMPLATES = (
     ('frontpage.html', 'Front Page'),
     ('standardpage.html', 'Standard Page'),
-    ('timeline_element.html', 'Timeline Element'),
     ('changelog.html', "Changelog Box"),
 )
 
@@ -283,7 +282,6 @@ CKEDITOR_SETTINGS = {
 CMSPLUGIN_CASCADE = {
     'plugins_with_extra_render_templates': {
             'CustomSnippetPlugin': [
-                ('timeline_element.html', "Timeline Element"),
                 ('changelog.html', "Changelog Box"),
                 # other tuples
             ],

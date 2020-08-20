@@ -1,7 +1,0 @@
-{% load cms_tags %}
-
-<div class="timeline-container border-bottom border-primary p-3">
-    {% for plugin in instance.child_plugin_instances %}
-        {% render_plugin plugin %}
-    {% endfor %}
-</div>
