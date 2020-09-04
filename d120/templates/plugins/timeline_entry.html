@@ -1,7 +1,7 @@
 {% load cms_tags %}
 
-<div class="container {{ instance.glossary.pos }}">
-    <div class="content">
+<div class="containertime time{{ instance.glossary.pos }}">
+    <div class="timecontent">
         <h2>{{ instance.glossary.header }}</h2>
 
         {% for plugin in instance.child_plugin_instances %}
