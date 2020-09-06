@@ -57,6 +57,8 @@ class TimelineEntryPlugin(CascadePluginBase):
     render_template = 'plugins/timeline_entry.html'
     form = TimelineEntryFormMixin
     allow_children = True
+    parent_classes = ["TimelinePlugin"]
+    require_parent = True
 
 
 plugin_pool.register_plugin(TimelineEntryPlugin)
@@ -110,7 +112,10 @@ class MapMarkerPlugin(CascadePluginBase):
     name = 'Map Marker'
     render_template = 'plugins/map_marker.html'
     form = MapMarkerEntryFormMixin
-    allow_children = True
+    allow_children = False
+    require_parent = True
+    parent_classes = ["MapPlugin"]
+    require_parent = True
 
 
 plugin_pool.register_plugin(MapMarkerPlugin)
