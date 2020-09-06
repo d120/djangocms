@@ -1,6 +1,7 @@
 from cms.plugin_pool import plugin_pool
+from cmsplugin_cascade.fields import SizeField
 from cmsplugin_cascade.plugin_base import CascadePluginBase
-from django.forms import CharField, Textarea, ChoiceField
+from django.forms import CharField, Textarea, ChoiceField, IntegerField, FloatField
 from entangled.forms import EntangledModelFormMixin
 
 
@@ -59,3 +60,57 @@ class TimelineEntryPlugin(CascadePluginBase):
 
 
 plugin_pool.register_plugin(TimelineEntryPlugin)
+
+
+class MapFormMixin(EntangledModelFormMixin):
+    height = SizeField(help_text="Height of the map")
+    lon = CharField(help_text="Longitude of center", label="Longitude")
+    lat = CharField(help_text="Latitude of center", label="Langitude")
+    zoom = IntegerField(help_text="Zoomlevel of map")
+    layers = CharField(widget=Textarea, help_text="One Layer identifier (no blanks) per line. Should be Human Readable.")
+
+    class Meta:
+        entangled_fields = {'glossary': ['height', 'lon', 'lat', 'zoom', 'layers']}
+
+
+class MapPlugin(CascadePluginBase):
+    """
+    Plugin to show a vertical timeline
+    """
+    name = 'Map'
+    render_template = 'plugins/map.html'
+    form = MapFormMixin
+    allow_children = True
+
+
+plugin_pool.register_plugin(MapPlugin)
+
+
+class MapMarkerEntryFormMixin(EntangledModelFormMixin):
+    title = CharField(help_text="Short title")
+    layer = CharField(help_text="Layer")
+    lon = CharField(label="Longitude")
+    lat = CharField(label="Langitude")
+    description = CharField(widget=Textarea)
+    icon = ChoiceField(
+        choices=[('5', 'Pin Blue'), ('6', 'Pin Green'), ('9', 'House Blue')],
+        label="Icon",
+        initial='5',
+        help_text="Icon of this marker"
+    )
+
+    class Meta:
+        entangled_fields = {'glossary': ['title', 'layer', 'lon', 'lat', 'description', 'icon']}
+
+
+class MapMarkerPlugin(CascadePluginBase):
+    """
+    Plugin to show a vertical timeline
+    """
+    name = 'Map Marker'
+    render_template = 'plugins/map_marker.html'
+    form = MapMarkerEntryFormMixin
+    allow_children = True
+
+
+plugin_pool.register_plugin(MapMarkerPlugin)
