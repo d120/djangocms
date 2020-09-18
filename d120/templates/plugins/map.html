@@ -52,7 +52,7 @@
             {% endfor %}
 
             layers = new Array();
-            layer_layerMapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
+            layer_layerMapnik = new OpenLayers.Layer.OSM.Mapnik("Map");
             map.addLayer(layer_layerMapnik)
             layers.push(new Array(layer_layerMapnik,'layer_layerMapnik'));
             setLayer(0);
@@ -83,5 +83,7 @@
     </script>
 {% endaddtoblock %}
 
-<div id="map" style="height: {{ instance.glossary.height }};width:100%;"></div>
+<div id="mapContainer">
+    <div id="map" style="height: {{ instance.glossary.height }};width:100%;"></div>
 <div class="hide"><p>The Map requires javascript.</p></div>
+</div>

@@ -81,9 +81,9 @@ plugin_pool.register_plugin(TimelineEntryPlugin)
 class MapFormMixin(EntangledModelFormMixin):
     height = SizeField(help_text="Height of the map")
     lon = CharField(help_text="Longitude of center", label="Longitude")
-    lat = CharField(help_text="Latitude of center", label="Langitude")
+    lat = CharField(help_text="Latitude of center", label="Latitude")
     zoom = IntegerField(help_text="Zoomlevel of map")
-    layers = CharField(widget=Textarea, help_text="One Layer identifier (no blanks) per line. Should be Human Readable.")
+    layers = CharField(widget=Textarea, help_text="One Layer identifier (no blanks) per line. Should be human-readable.")
 
     class Meta:
         entangled_fields = {'glossary': ['height', 'lon', 'lat', 'zoom', 'layers']}
@@ -106,7 +106,7 @@ class MapMarkerEntryFormMixin(EntangledModelFormMixin):
     title = CharField(help_text="Short title")
     layer = CharField(help_text="Layer")
     lon = CharField(label="Longitude")
-    lat = CharField(label="Langitude")
+    lat = CharField(label="Latitude")
     description = CharField(widget=Textarea)
     icon = ChoiceField(
         choices=[('5', 'Pin Blue'), ('6', 'Pin Green'), ('9', 'House Blue')],
