@@ -1,4 +1,14 @@
-{% load sekizai_tags d120_cascade %}
+{% load sekizai_tags d120_cascade i18n %}
+
+{% addtoblock "css" %}
+<style>
+    .todolist-ul {
+        list-style-type:none;
+        padding-left: 0;
+        line-height: 100%;
+    }
+</style>
+{% endaddtoblock %}
 
 {% addtoblock "js" %}
     <script>
@@ -28,10 +38,14 @@
     </script>
 {% endaddtoblock %}
 
-<h5>ToDo: <span style="font-size: 0.5em;vertical-align: top;cursor:help;" class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Wird lokal im Browser gespeichert">?</span></h5>
+<h5>{{ instance.glossary.heading }}: <span style="font-size: 0.5em;vertical-align: top;cursor:help;" class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="{%  trans 'Will be saved in your browser locally' %}">?</span></h5>
 
 <form class="todolist" autocomplete="off">
-    {% for item in instance.glossary.items|to_todo_item_list %}
-        <input id="{{ item.id }}" type="checkbox" name="{{ item.id }}"> <label for="{{ item.id }}">{{ item.label }}</label><br>
-    {% endfor %}
+    <ul class="todolist-ul">
+        {% for item in instance.glossary.items|to_todo_item_list:instance.glossary.prefix %}
+            <li>
+                <input id="{{ item.id }}" type="checkbox" name="{{ item.id }}">
+                <label for="{{ item.id }}">{{ item.label }}</label></li>
+        {% endfor %}
+    </ul>
 </form>

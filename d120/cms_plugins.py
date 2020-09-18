@@ -6,10 +6,12 @@ from entangled.forms import EntangledModelFormMixin
 
 
 class ToDoListFormMixin(EntangledModelFormMixin):
+    heading = CharField(initial="ToDo")
+    prefix = CharField(help_text="Make sure the items do not collide with another ToDoList on this page")
     items = CharField(widget=Textarea, help_text="Add one to do item per line")
 
     class Meta:
-        entangled_fields = {'glossary': ['items']}
+        entangled_fields = {'glossary': ['heading', 'prefix', 'items']}
 
 
 class ToDoListPlugin(CascadePluginBase):
