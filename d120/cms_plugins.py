@@ -109,7 +109,7 @@ class MapMarkerEntryFormMixin(EntangledModelFormMixin):
     lat = CharField(label="Latitude")
     description = CharField(widget=Textarea)
     icon = ChoiceField(
-        choices=[('5', 'Pin Blue'), ('6', 'Pin Green'), ('9', 'House Blue')],
+        choices=[('5', 'Blue'), ('6', 'Red'), ('7', 'Green'), ('8', 'Purple'), ('9', 'Turquoise'), ('10', 'Orange'), ('11', 'House')],
         label="Icon",
         initial='5',
         help_text="Icon of this marker"

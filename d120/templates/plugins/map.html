@@ -62,9 +62,13 @@
 
             // Add used maker icons..
             icons = new Array();
-            icons[5] = new Array('http://osmtools.de/easymap/images/pin_blue.png','16','28','0','1');
-            icons[6] = new Array('http://osmtools.de/easymap/images/pin_green.png','16','28','0','1');
-            icons[9] = new Array('http://osmtools.de/easymap/images/haus_blue.png','20','24','0.5','0.5');
+            icons[5] = new Array('{% static "d120/plugins/img/map/marker_blue.png" %}','22','32','0','1');
+            icons[6] = new Array('{% static "d120/plugins/img/map/marker_red.png" %}','22','32','0','1');
+            icons[7] = new Array('{% static "d120/plugins/img/map/marker_green.png" %}','22','32','0','1');
+            icons[8] = new Array('{% static "d120/plugins/img/map/marker_purple.png" %}','22','32','0','1');
+            icons[9] = new Array('{% static "d120/plugins/img/map/marker_turquoise.png" %}','22','32','0','1');
+            icons[10] = new Array('{% static "d120/plugins/img/map/marker_orange.png" %}','22','32','0','1');
+            icons[11] = new Array('{% static "d120/plugins/img/map/home.png" %}','33','32','0','1');
 
             {% for plugin in instance.child_plugin_instances %}
                 {% include "plugins/map_marker.html" with instance=plugin %}
