@@ -114,8 +114,6 @@ MIDDLEWARE = [
 #    'pyTUID.middleware.TUIDMiddleware',
 ]
 
-APPEND_SLASH = False
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
