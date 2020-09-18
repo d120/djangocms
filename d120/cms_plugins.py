@@ -28,7 +28,8 @@ plugin_pool.register_plugin(ToDoListPlugin)
 
 class ChangelogBoxPlugin(TransparentContainer, CascadePluginBase):
     """
-    Plugin to show a vertical timeline
+    Plugin to show the last change (publication) timestamp of this page
+    (together with other plugins indicating the changes if wanted)
     """
     name = 'Changelog Box'
     render_template = 'plugins/changelog.html'
@@ -65,7 +66,7 @@ class TimelineEntryFormMixin(EntangledModelFormMixin):
 
 class TimelineEntryPlugin(CascadePluginBase):
     """
-    Plugin to show a vertical timeline
+    Plugin representing an entry of the timeline plugin
     """
     name = 'Timeline Entry'
     render_template = 'plugins/timeline_entry.html'
@@ -91,7 +92,10 @@ class MapFormMixin(EntangledModelFormMixin):
 
 class MapPlugin(CascadePluginBase):
     """
-    Plugin to show a vertical timeline
+    Embed a custom open street map in the page
+
+    Due to limitations in the django cascade plugin system, only one map can be used per page
+    and after editing the page has to be reloaded to reflect the changes.
     """
     name = 'Map'
     render_template = 'plugins/map.html'
@@ -121,7 +125,7 @@ class MapMarkerEntryFormMixin(EntangledModelFormMixin):
 
 class MapMarkerPlugin(CascadePluginBase):
     """
-    Plugin to show a vertical timeline
+    Plugin to add a marker to the map plugin
     """
     name = 'Map Marker'
     render_template = 'plugins/map_marker.html'
