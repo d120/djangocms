@@ -1,7 +1,7 @@
-{% load cms_tags %}
+{% load cms_tags i18n %}
 
-<div class="">
-    Letzte Änderung: {{ request.current_page.changed_date }}
+<div>
+    {% trans "Last Change" %}: {{ request.current_page.changed_date }}
 
     {% for plugin in instance.child_plugin_instances %}
         {% render_plugin plugin %}

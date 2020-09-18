@@ -239,7 +239,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CMS_TEMPLATES = (
     ('frontpage.html', 'Front Page'),
     ('standardpage.html', 'Standard Page'),
-    ('changelog.html', "Changelog Box"),
 )
 
 CMS_PERMISSION = True
@@ -282,11 +281,10 @@ CKEDITOR_SETTINGS = {
 CMSPLUGIN_CASCADE = {
     'plugins_with_extra_render_templates': {
             'CustomSnippetPlugin': [
-                ('changelog.html', "Changelog Box"),
                 # other tuples
             ],
         },
-    'alien_plugins': ['ToDoListPlugin'],
+    'alien_plugins': [],
 }
 
 # application-specific-cookies

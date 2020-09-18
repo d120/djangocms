@@ -1,6 +1,6 @@
 from cms.plugin_pool import plugin_pool
 from cmsplugin_cascade.fields import SizeField
-from cmsplugin_cascade.plugin_base import CascadePluginBase
+from cmsplugin_cascade.plugin_base import CascadePluginBase, TransparentContainer
 from django.forms import CharField, Textarea, ChoiceField, IntegerField, FloatField
 from entangled.forms import EntangledModelFormMixin
 
@@ -22,6 +22,18 @@ class ToDoListPlugin(CascadePluginBase):
 
 
 plugin_pool.register_plugin(ToDoListPlugin)
+
+
+class ChangelogBoxPlugin(TransparentContainer, CascadePluginBase):
+    """
+    Plugin to show a vertical timeline
+    """
+    name = 'Changelog Box'
+    render_template = 'plugins/changelog.html'
+    allow_children = True
+
+
+plugin_pool.register_plugin(ChangelogBoxPlugin)
 
 
 class TimelinePlugin(CascadePluginBase):
