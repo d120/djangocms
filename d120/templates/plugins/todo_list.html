@@ -1,0 +1,51 @@
+{% load sekizai_tags d120_cascade i18n %}
+
+{% addtoblock "css" %}
+<style>
+    .todolist-ul {
+        list-style-type:none;
+        padding-left: 0;
+        line-height: 100%;
+    }
+</style>
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+    <script>
+        let forms = document.getElementsByClassName('todolist');
+        let myStorage = window.localStorage;
+
+        function update(event) {
+            let checked = form.querySelectorAll(':checked');
+            var isChecked = false;
+            checked.forEach(input => {
+                if (input == event.target) {
+                    isChecked = true;
+                }
+            });
+            myStorage.setItem(event.target.name, isChecked ? 'true' : 'false');
+        }
+
+        for (var form of forms) {
+            var inputs = form.querySelectorAll('input[type="checkbox"]');
+            for (const [i, elem] of inputs.entries()) {
+                let value = myStorage.getItem(elem.name) == 'true';
+                console.log("Loading", elem.name, ":", value);
+                if (value) elem.checked = "checked";
+                elem.addEventListener('input', update);
+            }
+        }
+    </script>
+{% endaddtoblock %}
+
+<h5>{{ instance.glossary.heading }}: <span style="font-size: 0.5em;vertical-align: top;cursor:help;" class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="{%  trans 'Will be saved in your browser locally' %}">?</span></h5>
+
+<form class="todolist" autocomplete="off">
+    <ul class="todolist-ul">
+        {% for item in instance.glossary.items|to_todo_item_list:instance.glossary.prefix %}
+            <li>
+                <input id="{{ item.id }}" type="checkbox" name="{{ item.id }}">
+                <label for="{{ item.id }}">{{ item.label }}</label></li>
+        {% endfor %}
+    </ul>
+</form>

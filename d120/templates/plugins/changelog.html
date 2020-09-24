@@ -1,0 +1,9 @@
+{% load cms_tags i18n %}
+
+<div>
+    {% trans "Last Change" %}: {{ request.current_page.changed_date }}
+
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+</div>

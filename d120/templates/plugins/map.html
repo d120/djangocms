@@ -1,0 +1,93 @@
+{% load static cms_tags sekizai_tags d120_cascade page_color %}
+
+{% addtoblock "css" %}
+    <link rel="stylesheet" type="text/css" href="{% static "d120/plugins/css/map.css" %}" />
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+    <script type="text/javascript" src="{% static "d120/plugins/openlayers/OpenLayers.js" %}"></script>
+    <script type="text/javascript" src="https://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+    <script type="text/javascript" src="{% static "d120/plugins/js/map_utils.js" %}"></script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+
+        var map;
+
+        var showPopupOnHover = false;
+        text = new Array("Show map information","Hide map information");
+
+        function drawmap() {
+            OpenLayers.Lang.setCode('de');
+
+            map = new OpenLayers.Map('map', {
+                projection: new OpenLayers.Projection("EPSG:900913"),
+                displayProjection: new OpenLayers.Projection("EPSG:4326"),
+                controls: [
+                new OpenLayers.Control.MouseDefaults(),
+                new OpenLayers.Control.Attribution()],
+                maxExtent:
+                    new OpenLayers.Bounds(-20037508.34,-20037508.34,
+                                            20037508.34, 20037508.34),
+                numZoomLevels: 18,
+                maxResolution: 156543,
+                units: 'meters'
+            });
+
+            // Add more controls..
+            map.addControl(new OpenLayers.Control.LayerSwitcher());
+            map.addControl(new OpenLayers.Control.PanZoomBar());
+
+            // Position and zoom of the map
+            lon = {{ instance.glossary.lon }};
+            lat = {{ instance.glossary.lat }};
+            zoom = {{ instance.glossary.zoom }};
+
+            checkForPermalink();
+
+            // Add layers
+            {% for item in instance.glossary.layers|multiline_to_items %}
+                layer_{{ item }} = new OpenLayers.Layer.Markers("{{ item }}", { projection: new OpenLayers.Projection("EPSG:4326"),visibility: true, displayInLayerSwitcher: true });
+                map.addLayer(layer_{{ item }});
+            {% endfor %}
+
+            layers = new Array();
+            layer_layerMapnik = new OpenLayers.Layer.OSM.Mapnik("Map");
+            map.addLayer(layer_layerMapnik)
+            layers.push(new Array(layer_layerMapnik,'layer_layerMapnik'));
+            setLayer(0);
+
+            // Jump to the right position and zoom..
+            jumpTo(lon,lat,zoom);
+
+            // Add used maker icons..
+            icons = new Array();
+            icons[5] = new Array('{% static "d120/plugins/img/map/marker_blue.png" %}','22','32','0','1');
+            icons[6] = new Array('{% static "d120/plugins/img/map/marker_red.png" %}','22','32','0','1');
+            icons[7] = new Array('{% static "d120/plugins/img/map/marker_green.png" %}','22','32','0','1');
+            icons[8] = new Array('{% static "d120/plugins/img/map/marker_purple.png" %}','22','32','0','1');
+            icons[9] = new Array('{% static "d120/plugins/img/map/marker_turquoise.png" %}','22','32','0','1');
+            icons[10] = new Array('{% static "d120/plugins/img/map/marker_orange.png" %}','22','32','0','1');
+            icons[11] = new Array('{% static "d120/plugins/img/map/home.png" %}','33','32','0','1');
+
+            {% for plugin in instance.child_plugin_instances %}
+                {% include "plugins/map_marker.html" with instance=plugin %}
+            {% endfor %}
+
+
+            geometries = new Array();
+
+            jumpTo(lon, lat, zoom);
+            checkUtilVersion(4);
+        }
+
+        drawmap();
+
+        //]]>
+    </script>
+{% endaddtoblock %}
+
+<div id="mapContainer">
+    <div id="map" style="height: {{ instance.glossary.height }};width:100%;"></div>
+<div class="hide"><p>The Map requires javascript.</p></div>
+</div>
