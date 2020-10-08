@@ -22,6 +22,10 @@ class ToDoListPlugin(CascadePluginBase):
     render_template = 'plugins/todo_list.html'
     form = ToDoListFormMixin
 
+    @classmethod
+    def get_identifier(cls, instance):
+        return instance.glossary["heading"]
+
 
 plugin_pool.register_plugin(ToDoListPlugin)
 
@@ -74,6 +78,10 @@ class TimelineEntryPlugin(CascadePluginBase):
     allow_children = True
     parent_classes = ["TimelinePlugin"]
     require_parent = True
+
+    @classmethod
+    def get_identifier(cls, instance):
+        return instance.glossary["header"]
 
 
 plugin_pool.register_plugin(TimelineEntryPlugin)
@@ -134,6 +142,10 @@ class MapMarkerPlugin(CascadePluginBase):
     require_parent = True
     parent_classes = ["MapPlugin"]
     require_parent = True
+
+    @classmethod
+    def get_identifier(cls, instance):
+        return instance.glossary["title"]
 
 
 plugin_pool.register_plugin(MapMarkerPlugin)
