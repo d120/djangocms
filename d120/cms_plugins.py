@@ -149,3 +149,27 @@ class MapMarkerPlugin(CascadePluginBase):
 
 
 plugin_pool.register_plugin(MapMarkerPlugin)
+
+
+class CustomCSSBlockFormMixin(EntangledModelFormMixin):
+    css = CharField(widget=Textarea)
+
+    class Meta:
+        entangled_fields = {'glossary': ['css']}
+
+
+class CustomCSSBlockPlugin(CascadePluginBase):
+    """
+    Plugin to add a marker to the map plugin
+    """
+    name = 'Custom CSS Block'
+    render_template = 'plugins/css_block.html'
+    form = CustomCSSBlockFormMixin
+    allow_children = False
+
+    @classmethod
+    def get_identifier(cls, instance):
+        return instance.glossary['css']
+
+
+plugin_pool.register_plugin(CustomCSSBlockPlugin)

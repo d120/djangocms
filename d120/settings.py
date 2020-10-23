@@ -237,6 +237,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CMS_TEMPLATES = (
     ('frontpage.html', 'Front Page'),
     ('standardpage.html', 'Standard Page'),
+    ('plain.html', 'Plain Page'),
 )
 
 CMS_PERMISSION = True
