@@ -289,3 +289,9 @@ CMSPLUGIN_CASCADE = {
 # application-specific-cookies
 CSRF_COOKIE_NAME = 'djangocms_csrftoken'
 SESSION_COOKIE_NAME = 'djangocms_sessionid'
+
+### ICONS ###
+
+DJANGOCMS_ICON_SETS = (
+    ('fontawesome4', 'fa', 'Font Awesome 4', 'lastest'),
+)
