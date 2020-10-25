@@ -289,7 +289,7 @@ CMSPLUGIN_CASCADE = {
                 # other tuples
             ],
         },
-    'alien_plugins': [],
+    'alien_plugins': ['TextPlugin'],
 }
 
 # application-specific-cookies

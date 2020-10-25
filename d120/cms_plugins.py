@@ -68,7 +68,7 @@ class TimelineEntryFormMixin(EntangledModelFormMixin):
         entangled_fields = {'glossary': ['header', 'pos']}
 
 
-class TimelineEntryPlugin(CascadePluginBase):
+class TimelineEntryPlugin(TransparentContainer, CascadePluginBase):
     """
     Plugin representing an entry of the timeline plugin
     """
@@ -76,6 +76,7 @@ class TimelineEntryPlugin(CascadePluginBase):
     render_template = 'plugins/timeline_entry.html'
     form = TimelineEntryFormMixin
     allow_children = True
+    alien_child_classes = True
     parent_classes = ["TimelinePlugin"]
     require_parent = True
 

@@ -2,7 +2,7 @@
 
 <div class="containertime time{{ instance.glossary.pos }}">
     <div class="timecontent">
-        <h2>{{ instance.glossary.header }}</h2>
+        <h3>{{ instance.glossary.header }}</h3>
 
         {% for plugin in instance.child_plugin_instances %}
             {% render_plugin plugin %}
