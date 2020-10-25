@@ -44,8 +44,8 @@
     <ul class="todolist-ul">
         {% for item in instance.glossary.items|to_todo_item_list:instance.glossary.prefix %}
             <li>
-                <input id="{{ item.id }}" type="checkbox" name="{{ item.id }}">
-                <label for="{{ item.id }}">{{ item.label }}</label></li>
+                <label for="{{ item.id }}"><input id="{{ item.id }}" type="checkbox" name="{{ item.id }}">&nbsp;{{ item.label | partially_safe }}</label>
+            </li>
         {% endfor %}
     </ul>
 </form>
