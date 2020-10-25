@@ -275,6 +275,12 @@ CKEDITOR_SETTINGS = {
     'skin': 'moono-lisa',
     'toolbar': 'CMS',
     'stylesSet': format_lazy('default:{}', reverse_lazy('admin:cascade_texteditor_config')),
+    'contentsCss': [
+        '/static/vendor/bootstrap/dist/css/bootstrap.min.css',
+        '/static/vendor/font-awesome/css/font-awesome.min.css',
+        '/static/vendor/typeface-libre-franklin/index.css',
+        '/static/d120/css/custom.css',
+    ],
 }
 
 CMSPLUGIN_CASCADE = {
@@ -289,3 +295,9 @@ CMSPLUGIN_CASCADE = {
 # application-specific-cookies
 CSRF_COOKIE_NAME = 'djangocms_csrftoken'
 SESSION_COOKIE_NAME = 'djangocms_sessionid'
+
+### ICONS ###
+
+DJANGOCMS_ICON_SETS = (
+    ('fontawesome4', 'fa', 'Font Awesome 4', 'lastest'),
+)

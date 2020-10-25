@@ -5,6 +5,9 @@ body {
     color: #444444;
     overflow-y: scroll;
 }
+body.cke_editable {
+    margin: 8px;
+}
 a:hover {
     color: #111111;
 }
