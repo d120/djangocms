@@ -2,6 +2,13 @@
 
 {% addtoblock "css" %}
     <link rel="stylesheet" type="text/css" href="{% static "d120/plugins/css/map.css" %}" />
+
+    <style>
+        .olFramedCloudPopupContent {
+            overflow-y:auto!important;
+        }
+    </style>
+
 {% endaddtoblock %}
 
 {% addtoblock "js" %}
