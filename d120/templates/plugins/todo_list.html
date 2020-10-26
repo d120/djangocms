@@ -16,14 +16,7 @@
         let myStorage = window.localStorage;
 
         function update(event) {
-            let checked = form.querySelectorAll(':checked');
-            var isChecked = false;
-            checked.forEach(input => {
-                if (input == event.target) {
-                    isChecked = true;
-                }
-            });
-            myStorage.setItem(event.target.name, isChecked ? 'true' : 'false');
+            myStorage.setItem(event.target.name, event.target.checked ? 'true' : 'false');
         }
 
         for (var form of forms) {
