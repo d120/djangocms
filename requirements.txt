@@ -9,7 +9,7 @@ django-import-export==2.3.0
 djangocms-bootstrap4==2.0.0
 # cmsplugin-filer
 djangocms-history==2.0.0
-djangocms-link==2.6.1
+djangocms-link==3.0.0
 djangocms-redirect==0.5.0
 djangocms-style==3.0.0
 djangocms-text-ckeditor==3.10.0
