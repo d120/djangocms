@@ -5,7 +5,7 @@ django-cms==3.7.4
 
 # a bunch of packages installed without regarding their versions
 # when (temporary) pinning of versions is necessary, comment on the reasoning
-django-import-export==2.3.0
+django-import-export==2.4.0
 djangocms-bootstrap4==2.0.0
 # cmsplugin-filer
 djangocms-history==2.0.0
