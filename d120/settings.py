@@ -58,7 +58,6 @@ INSTALLED_APPS = (
     'djangocms_inherit',
     'djangocms_redirect',
     'djangocms_history',
-#    'aldryn_bootstrap3',
     'djangocms_icon',
     'djangocms_link',
     'djangocms_picture',
@@ -81,11 +80,7 @@ INSTALLED_APPS = (
     'djangocms_bootstrap4.contrib.bootstrap4_utilities',
     'rssplugin',
     'sslserver',
-    'import_export',
-#    'bootstrap3',
     'd120',
-#    'pyTUID',
-#    'pyBuchaktion',
     'git_version',
     'cmsplugin_cascade',
     'cmsplugin_cascade.clipboard',  # optional
@@ -111,7 +106,6 @@ MIDDLEWARE = [
     'cms.middleware.language.LanguageCookieMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
-#    'pyTUID.middleware.TUIDMiddleware',
 ]
 
 TEMPLATES = [
@@ -256,13 +250,6 @@ FILER_ALLOW_REGULAR_USERS_TO_ADD_ROOT_FOLDERS = True
 ### RSSPLUGIN ###
 
 CMS_RSS_PLUGIN_TEMPLATE = 'rss_feed.html'
-
-
-### PYTUID ###
-
-TUID_SERVER_URL = 'https://sso.tu-darmstadt.de/'
-TUID_FORCE_SERVICE_URL = 'https://localhost:8000/tuid/login/'
-
 
 ### CASCADE ###
 
