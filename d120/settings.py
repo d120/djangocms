@@ -55,7 +55,6 @@ INSTALLED_APPS = (
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_utils',
     'cmsplugin_filer_video',
-    'djangocms_inherit',
     'djangocms_redirect',
     'djangocms_history',
     'djangocms_icon',

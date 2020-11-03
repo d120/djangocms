@@ -27,6 +27,4 @@ django-git-version==0.1.0
 
 #git+https://github.com/divio/djangocms-attributes-field
 git+https://github.com/andersinno/django-rss-plugin            # install from source until PyPi release is up to date
-
-git+https://github.com/isotoma/djangocms-inherit
 git+https://github.com/pawelmarkowski/cmsplugin-filer
