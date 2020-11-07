@@ -114,7 +114,46 @@ def forwards_filer_image(apps, schema_editor):
         new_object.save()
 
 def forwards_filer_video(apps, schema_editor):
-    pass
+    try:
+        CMSPluginFilerVideo = apps.get_model('cmsplugin_filer', 'FilerVideo')
+    except LookupError:
+        return
+
+    DjangoCMSVideo = apps.get_model('djangocms_video', 'Video')
+    for old_object in CMSPluginFilerVideo.objects.all():
+        old_cmsplugin_ptr = old_object.cmsplugin_ptr
+        new_object = DjangoCMSVideo(
+            movie = old_object.movie,
+            movie_url = old_object.movie_url,
+            image = old_object.image,
+            width = old_object.width,
+            height = old_object.height,
+            auto_play = old_object.auto_play,
+            auto_hide = old_object.auto_hide,
+            fullscreen = old_object.fullscreen,
+            loop = old_object.loop,
+            bgcolor = old_object.bgcolor,
+            textcolor = old_object.textcolor,
+            seekbarcolor = old_object.seekbarcolor,
+            seekbarbgcolor = old_object.seekbarbgcolor,
+            loadingbarcolor = old_object.loadingbarcolor,
+            buttonoutcolor = old_object.buttonoutcolor,
+            buttonovercolor = old_object.buttonovercolor,
+            buttonhighlightcolor = old_object.buttonhighlightcolor,
+            # fields for the cms_cmsplugin table
+            position=old_cmsplugin_ptr.position,
+            language=old_cmsplugin_ptr.language,
+            plugin_type='VideoPlugin',
+            creation_date=old_cmsplugin_ptr.creation_date,
+            changed_date=old_cmsplugin_ptr.changed_date,
+            parent=old_cmsplugin_ptr.parent,
+            placeholder=old_cmsplugin_ptr.placeholder,
+            depth=old_cmsplugin_ptr.depth,
+            numchild=old_cmsplugin_ptr.numchild,
+            path=old_cmsplugin_ptr.path,
+        )
+        old_object.delete()
+        new_object.save()
 
 # == TODO ==
 #
