@@ -53,7 +53,6 @@ INSTALLED_APPS = (
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_teaser',
-    'cmsplugin_filer_utils', # this isn't even an app
     'cmsplugin_filer_video',
     'djangocms_redirect',
     'djangocms_history',
