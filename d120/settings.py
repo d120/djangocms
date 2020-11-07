@@ -59,6 +59,8 @@ INSTALLED_APPS = (
     'djangocms_history',
     'djangocms_icon',
     'djangocms_link',
+    'djangocms_file',
+    'djangocms_video',
     'djangocms_picture',
 #    'djangocms_forms',
     'django_select2',

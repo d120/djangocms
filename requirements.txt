@@ -9,6 +9,8 @@ djangocms-bootstrap4==2.0.0
 djangocms-history==2.0.0
 djangocms-link==3.0.0
 djangocms-redirect==0.6.0
+djangocms-file==3.0.0
+djangocms-video==3.0.0
 djangocms-style==3.0.0
 djangocms-text-ckeditor==4.0.0
 djangocms-column==1.11.0
