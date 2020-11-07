@@ -68,6 +68,7 @@ def forwards_filer_folder(apps, schema_editor):
         old_object.delete()
         new_object.save()
 
+BOOTSTRAP_4_APP = 'djangocms_bootstrap4.contrib.bootstrap4_picture'
 
 def forwards_filer_image(apps, schema_editor):
     try:
@@ -75,7 +76,12 @@ def forwards_filer_image(apps, schema_editor):
     except LookupError:
         return
 
-    DjangoCMSPicture = apps.get_model('djangocms_picture', 'Picture')
+    has_b4 = global_apps.is_installed(BOOTSTRAP_4_APP)
+    model = 'Bootstrap4Picture' if has_b4 else 'Picture'
+    plugin_type = "{}Plugin".format(model)
+    app = 'bootstrap4_picture' if has_b4 else 'djangocms_picture'
+
+    DjangoCMSPicture = apps.get_model(app, model)
     for old_object in CMSPluginFilerImage.objects.all():
         old_cmsplugin_ptr = old_object.cmsplugin_ptr
         attributes = {}
@@ -101,7 +107,7 @@ def forwards_filer_image(apps, schema_editor):
             # fields for the cms_cmsplugin table
             position=old_cmsplugin_ptr.position,
             language=old_cmsplugin_ptr.language,
-            plugin_type='PicturePlugin',
+            plugin_type=plugin_type,
             creation_date=old_cmsplugin_ptr.creation_date,
             changed_date=old_cmsplugin_ptr.changed_date,
             parent=old_cmsplugin_ptr.parent,
@@ -115,31 +121,24 @@ def forwards_filer_image(apps, schema_editor):
 
 def forwards_filer_video(apps, schema_editor):
     try:
-        CMSPluginFilerVideo = apps.get_model('cmsplugin_filer', 'FilerVideo')
+        CMSPluginFilerVideo = apps.get_model('cmsplugin_filer_video', 'FilerVideo')
     except LookupError:
         return
 
-    DjangoCMSVideo = apps.get_model('djangocms_video', 'Video')
+    DjangoCMSVideo = apps.get_model('djangocms_video', 'VideoPlayer')
     for old_object in CMSPluginFilerVideo.objects.all():
         old_cmsplugin_ptr = old_object.cmsplugin_ptr
+        attributes = {
+            'width': "{}{}".format(old_object.width, old_object.width_units),
+            'height': "{}{}".format(old_object.height, old_object.height_units),
+            'data-auto_play': str(old_object.auto_play).strip(),
+            'data-loop': str(old_object.loop).strip(),
+        }
         new_object = DjangoCMSVideo(
             movie = old_object.movie,
-            movie_url = old_object.movie_url,
+            embed_link = old_object.movie_url,
             image = old_object.image,
-            width = old_object.width,
-            height = old_object.height,
-            auto_play = old_object.auto_play,
-            auto_hide = old_object.auto_hide,
-            fullscreen = old_object.fullscreen,
-            loop = old_object.loop,
-            bgcolor = old_object.bgcolor,
-            textcolor = old_object.textcolor,
-            seekbarcolor = old_object.seekbarcolor,
-            seekbarbgcolor = old_object.seekbarbgcolor,
-            loadingbarcolor = old_object.loadingbarcolor,
-            buttonoutcolor = old_object.buttonoutcolor,
-            buttonovercolor = old_object.buttonovercolor,
-            buttonhighlightcolor = old_object.buttonhighlightcolor,
+            attributes = attributes,
             # fields for the cms_cmsplugin table
             position=old_cmsplugin_ptr.position,
             language=old_cmsplugin_ptr.language,
@@ -155,27 +154,13 @@ def forwards_filer_video(apps, schema_editor):
         old_object.delete()
         new_object.save()
 
-# == TODO ==
-#
-# * [ ] forward: djangocms-video
-# * [x] forward: djangocms-file
-# * [x] version: djangocms-picture
-# * [ ] version: django-filer
-
-# == Notes ==
-#
-# djangocms-picture 0008: added ``use_responsive_image`` (default='inherit')
-
-
 class Migration(migrations.Migration):
     '''
     Move data from filer-plugins to the new djangocms-*-plugins. Inspiration:
     https://docs.djangoproject.com/en/2.0/howto/writing-migrations/
     #migrating-data-between-third-party-apps
     '''
-    operations = [
-        migrations.RunPython(forwards)
-    ]
+    operations = []
     dependencies = [
         ('d120', '0002_auto_20161217_1707'),
     ]
@@ -191,10 +176,6 @@ class Migration(migrations.Migration):
 
     if image_installed:
         dependencies.append(('cmsplugin_filer_image', '0010_auto_20191127_1058'))
-        #('djangocms_picture', '0007_fix_alignment'),
-        #('djangocms_picture', '0008_picture_use_responsive_image'),
-        #('djangocms_picture', '0009_auto_20181212_1003'),
-        #('djangocms_picture', '0010_auto_20190627_0432'),
         dependencies.append(('djangocms_picture', '0011_auto_20190314_1536'))
         operations.append(migrations.RunPython(forwards_filer_image))
 
@@ -208,7 +189,6 @@ class Migration(migrations.Migration):
         operations.append(migrations.RunPython(forwards_filer_folder))
 
     if file_installed or folder_installed:
-        #('djangocms_file', '0010_removed_null_fields'),
         dependencies.append(('djangocms_file', '0011_auto_20181211_0357'))
 
     # -- Teaser --
@@ -221,6 +201,6 @@ class Migration(migrations.Migration):
 
     if video_installed:
         dependencies.append(('cmsplugin_filer_video', '0004_auto_20191126_2231'))
-        dependencies.append(('djangocms_video', '0002_set_related_name_for_cmsplugin_ptr'))
-        run_before.append(('djangocms_video', '0003_field_adaptions'))
+        dependencies.append(('djangocms_video', '0004_move_to_attributes'))
+        run_before.append(('djangocms_video', '0005_migrate_to_filer'))
         operations.append(migrations.RunPython(forwards_filer_video))
