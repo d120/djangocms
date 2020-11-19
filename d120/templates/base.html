@@ -38,6 +38,7 @@
         {% block page %}{% endblock page %}
         {% addtoblock "js" %}
         <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/popper.js/dist/umd/popper.min.js' %}"></script>
         <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.min.js' %}"></script>
         {% endaddtoblock %}
         {% render_block "js" %}
