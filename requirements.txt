@@ -20,7 +20,7 @@ django-sslserver==0.22
 mysqlclient==2.0.2
 pytz==2020.4
 #djangocms-forms
-djangocms-cascade==1.3.4
+djangocms-cascade==1.3.6
 bleach==3.2.1
 
 django-git-version==0.1.0
