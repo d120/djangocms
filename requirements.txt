@@ -1,6 +1,6 @@
 # major packages where new versions might introduce incompatibilities
 # test new major versions and update this file accordingly
-Django==2.2.18
+Django==2.2.24
 django-cms==3.8.0
 
 # a bunch of packages installed without regarding their versions
