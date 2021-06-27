@@ -132,7 +132,6 @@ li.sidebar-active {
     padding: 10px;
     background-color: #cccccc;
     background-color: rgba(255, 255, 255, .75);
-    padding-left: 25px!important;
     margin-left: -15px;
 }
 .sidebar-active > ul li {
