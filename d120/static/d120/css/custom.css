@@ -105,6 +105,7 @@ footer .row {
 .sidebar-nav > li {
     padding-left: 20px;
     margin-left: -5px;
+    word-break: break-all;
 }
 .sidebar-nav > li:hover {
     border-left: 5px solid #999999;
@@ -132,7 +133,6 @@ li.sidebar-active {
     padding: 10px;
     background-color: #cccccc;
     background-color: rgba(255, 255, 255, .75);
-    padding-left: 25px!important;
     margin-left: -15px;
 }
 .sidebar-active > ul li {
