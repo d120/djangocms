@@ -7,9 +7,9 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@fontsource/libre-franklin": "^4.5.0",
     "bootstrap": "^4.5.3",
     "font-awesome": "^4.7.0",
-    "fontsource-libre-franklin": "^3.1.6",
     "jquery": "^3.6.0"
   }
 }

@@ -263,7 +263,7 @@ CKEDITOR_SETTINGS = {
     'contentsCss': [
         '/static/vendor/bootstrap/dist/css/bootstrap.min.css',
         '/static/vendor/font-awesome/css/font-awesome.min.css',
-        '/static/vendor/fontsource-libre-franklin/index.css',
+        '/static/vendor/@fontsource/libre-franklin/index.css',
         '/static/d120/css/custom.css',
     ],
 }
