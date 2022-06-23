@@ -10,7 +10,7 @@ djangocms-history==2.0.0
 djangocms-link==3.0.0
 djangocms-redirect==0.6.0
 djangocms-style==3.0.0
-djangocms-text-ckeditor==4.0.0
+djangocms-text-ckeditor==5.1.1
 djangocms-column==1.11.0
 django-filer==2.0.2
 django-auth-ldap==2.2.0
