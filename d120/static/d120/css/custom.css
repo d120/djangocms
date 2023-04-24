@@ -29,6 +29,12 @@ footer i {
 footer .row {
     padding: 10px 0;
 }
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .footer-group {
     display: flex;
     flex-direction: row;
