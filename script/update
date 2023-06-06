@@ -15,7 +15,7 @@ fi
 
 git pull
 npm install
-pip install --upgrade -r requirements.txt --upgrade-strategy=eager --use-feature=2020-resolver
+pip install --upgrade -r requirements.txt --upgrade-strategy=eager
 cd d120 && ../manage.py compilemessages && cd ..
 if [ "$1" = "--prod" ]; then
     ./manage.py collectstatic --noinput
